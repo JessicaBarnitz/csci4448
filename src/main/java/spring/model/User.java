@@ -6,7 +6,9 @@ import java.util.*;
  */
 public class User {
 
-    /**
+    private static final User User = null;
+
+	/**
      * 
      */
     private String username;
@@ -122,8 +124,9 @@ public class User {
     * @param String _username
     * @param String _password
     */
-   public void login(void String _username, void String _password) {
+   public User login(String _username, String _password) {
        // TODO implement here
+	   return User;
    }
 
 }

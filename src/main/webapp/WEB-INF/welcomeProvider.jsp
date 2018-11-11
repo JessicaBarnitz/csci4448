@@ -53,6 +53,6 @@
 			}
 		</script>
 	</div>
-	<img alt="logo" src="${pageContext.request.contextPath}/logo.png">
+	<img alt="logo" src="images/logo.png">
 </body>
 </html>

@@ -15,7 +15,14 @@
 		<p style="color:mediumSeaGreen;"><i>This is the ${user} healthcare portal</i></p>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, ${firstName}</strong></p>
 		
-		<form NAME="form1" ACTION="formAction.jsp" METHOD="POST">
+		
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/billing'">Update Billing Information</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/personal'">Update Personal Information</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medical'">Update Medical Information</button>
+		<p></p>
+		
+		<!-- <form NAME="form1" ACTION="formAction.jsp" METHOD="POST"> 
+		<form NAME="form1" ACTION="http://localhost:8080/SpringMVCTutorial/formAction" METHOD="POST">
 			<input TYPE="HIDDEN" NAME="buttonName">
 			<input TYPE="BUTTON" VALUE="Schedule Appointment" ONCLICK="button1()">
 			<input TYPE="BUTTON" VALUE="Cancel Appointment" ONCLICK="button2()">
@@ -27,6 +34,7 @@
 		</form>
 		
 		<script LANGUAGE="JavaScript">
+			
 			function button1()
 			{
 				document.form1.buttonName.value = "Schedule Appointment"
@@ -57,8 +65,8 @@
 				document.form1.buttonName.value = "Appointments"
 				form1.submit()
 			}
-		</script>
+		</script>-->
 	</div>
-	<img alt="logo" src="${pageContext.request.contextPath}/logo.png">
+	<img alt="logo" src="images/logo.png">
 </body>
 </html>

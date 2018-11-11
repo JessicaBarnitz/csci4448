@@ -65,7 +65,6 @@
 			}
 		</script>
 	</div>
-	<!--  <img alt="logo" src="${pageContext.request.contextPath}/logo.png">-->
-	<img alt="logo" src="tomcat/webapps/portal_content/img/logo.png">
+	<img alt="logo" src="images/logo.png">
 </body>
 </html>

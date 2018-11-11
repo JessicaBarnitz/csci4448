@@ -30,6 +30,6 @@
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/admin'" value=("firstName","test2")>ADMIN</button>
 		
 	</div>
-	<img alt="logo" src="${pageContext.request.contextPath}/logo.png">
+	<img alt="logo" src="images/logo.png">
 </body>
 </html>

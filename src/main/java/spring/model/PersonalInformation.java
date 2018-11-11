@@ -1,3 +1,5 @@
+package spring.model;
+
 
 import java.util.*;
 
@@ -30,11 +32,11 @@ public class PersonalInformation {
      * Default constructor
      */
     public PersonalInformation() {
-        this.phone = "";
-        this.email = "";
+        this.phone = "contact number";
+        this.email = "contact email";
         this.homeAddress = null;
-        this.emergencyContactName = "";
-        this.emergencyContactPhone = "";
+        this.emergencyContactName = "emergency contact name";
+        this.emergencyContactPhone = "emergency contact number";
     }
    /**
     * @param _phone
@@ -43,7 +45,7 @@ public class PersonalInformation {
     * @param _emergencyContactName
     * @param _emergencyContactNumber
     */
-    public void PersonalInformation(String _phone, String _email, Address _homeAddress, String _emergencyContactName, String _emergencyContactNumber) {
+    public PersonalInformation(String _phone, String _email, Address _homeAddress, String _emergencyContactName, String _emergencyContactPhone) {
         this.phone = _phone;
         this.email = _email;
         this.homeAddress = _homeAddress;

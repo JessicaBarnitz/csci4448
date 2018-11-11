@@ -1,3 +1,5 @@
+package spring.model;
+
 
 import java.util.*;
 
@@ -44,7 +46,7 @@ public class MedicalInformation {
     /**
      * 
      */
-    private List<HealthcareProvider> healthcareProviders;
+//    private List<HealthcareProvider> healthcareProviders;
 
     /**
      * 
@@ -55,6 +57,14 @@ public class MedicalInformation {
      * Default constructor
      */
     public MedicalInformation() {
+    	this.allergies = null;
+    	this.immunizations = null;
+    	this.currentMedications = null;
+    	this.mentalStatusExam = "";
+    	this.functionalStatusExam = "";
+    	this.personalMedicalHistory = null;
+    	this.familyMedicalHistory = null;
+    	this.consent = false;
     }
 
 
@@ -67,12 +77,18 @@ public class MedicalInformation {
      * @param _personalMedicalHistory 
      * @param _familyMedicalHistory 
      * @param _consent 
-     * @param _healthcareProviders 
+//     * @param _healthcareProviders 
      * @return
      */
-    public void MedicalInformation(List<String> _allergies, List<String> _immunizations, List<String> _currentMedications, String _mentalStatusExam, String _functionalStatusExam, List<String> _personalMedicalHistory, List<String> _familyMedicalHistory, boolean _consent, List<HealthcareProvider> _healthcareProviders) {
-        // TODO implement here
-        return null;
+    public MedicalInformation(List<String> _allergies, List<String> _immunizations, List<String> _currentMedications, String _mentalStatusExam, String _functionalStatusExam, List<String> _personalMedicalHistory, List<String> _familyMedicalHistory, boolean _consent) {//, List<HealthcareProvider> _healthcareProviders) {
+    	this.allergies = _allergies;
+    	this.immunizations = _immunizations;
+    	this.currentMedications = _currentMedications;
+    	this.mentalStatusExam = _mentalStatusExam;
+    	this.functionalStatusExam = _functionalStatusExam;
+    	this.personalMedicalHistory = _personalMedicalHistory;
+    	this.familyMedicalHistory = _familyMedicalHistory;
+    	this.consent = _consent;
     }
 
     public List<String> getAllergies() {
@@ -137,13 +153,13 @@ public class MedicalInformation {
         this.familyMedicalHistory = familyMedicalHistory;
     }
 
-    public List<HealthcareProvider> getHealthcareProviders() {
-        return healthcareProviders;
-    }
-
-    public void setHealthcareProviders(List<HealthcareProvider> healthcareProviders) {
-        this.healthcareProviders = healthcareProviders;
-    }
+//    public List<HealthcareProvider> getHealthcareProviders() {
+//        return healthcareProviders;
+//    }
+//
+//    public void setHealthcareProviders(List<HealthcareProvider> healthcareProviders) {
+//        this.healthcareProviders = healthcareProviders;
+//    }
 
     public boolean getConsent() {
         return consent;

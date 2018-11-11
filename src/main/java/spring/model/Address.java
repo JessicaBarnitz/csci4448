@@ -1,3 +1,5 @@
+package spring.model;
+
 
 import java.util.*;
 
@@ -40,7 +42,7 @@ public class Address {
      * @param county 
      * @param state
      */
-    public void Address(String _street, int _zipcode, String _county, String _state) {
+    public Address(String _street, int _zipcode, String _county, String _state) {
         this.street = _street;
         this.zipcode = _zipcode;
         this.county = _county;
@@ -89,7 +91,7 @@ public class Address {
      * @return
      */
     public String getCounty() {
-        return this.country;
+        return this.county;
     }
 
     /**

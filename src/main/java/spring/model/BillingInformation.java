@@ -1,3 +1,5 @@
+package spring.model;
+
 
 import java.util.*;
 
@@ -41,10 +43,10 @@ public class BillingInformation {
      */
     public BillingInformation() {
         this.insurance = false;
-        this.insurancePlan="";
-        this.insurancePlanNumber="";
+        this.insurancePlan="name";
+        this.insurancePlanNumber="number";
         this.effectiveDate=null;
-        this.copay="";
+        this.copay="amount";
         this.billingAddress=null;
     }
 
@@ -56,13 +58,13 @@ public class BillingInformation {
      * @param _copay
      * @param _billingAddress
      */
-    public void BillingInformation(boolean _insurance, String _insurancePlan, String _insurancePlanNumber, Date _effectiveDate, String _copay, Address _billingAddress) {
+    public BillingInformation(boolean _insurance, String _insurancePlan, String _insurancePlanNumber, Date _effectiveDate, String _copay, Address _billingAddress) {
         this.insurance = _insurance;
-        this.insurancePlan= _insurancePlan;
-        this.insurancePlanNumber= _insurancePlanNumber;
-        this.effectiveDate= _effectiveDate;
-        this.copay= _copay;
-        this.billingAddress=_billingAddress;
+        this.insurancePlan = _insurancePlan;
+        this.insurancePlanNumber = _insurancePlanNumber;
+        this.effectiveDate = _effectiveDate;
+        this.copay = _copay;
+        this.billingAddress =_billingAddress;
     }
 
     /**
@@ -91,7 +93,6 @@ public class BillingInformation {
      */
     public void setInsurancePlan(String _insurancePlan) {
         this.insurancePlan = _insurancePlan;
-        return null;
     }
 
     /**
@@ -158,7 +159,6 @@ public class BillingInformation {
      */
     public void setBillingAddress(String _street, int _zipcode, String _county, String _state) {
         // TODO implement here
-        return null;
     }
 
     /**
