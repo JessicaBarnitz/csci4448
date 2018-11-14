@@ -36,7 +36,8 @@ public class BillingInformation {
     /**
      *
      */
-    private Address billingAddress;
+    private String billingAddress;
+//    private Address billingAddress;
 
     /**
      * Default constructor
@@ -47,7 +48,8 @@ public class BillingInformation {
         this.insurancePlanNumber="number";
         this.effectiveDate=null;
         this.copay="amount";
-        this.billingAddress=null;
+        this.billingAddress="address";
+//        this.billingAddress=null;
     }
 
     /**
@@ -58,7 +60,7 @@ public class BillingInformation {
      * @param _copay
      * @param _billingAddress
      */
-    public BillingInformation(boolean _insurance, String _insurancePlan, String _insurancePlanNumber, Date _effectiveDate, String _copay, Address _billingAddress) {
+    public BillingInformation(boolean _insurance, String _insurancePlan, String _insurancePlanNumber, Date _effectiveDate, String _copay, String _billingAddress) {// Address _billingAddress) {
         this.insurance = _insurance;
         this.insurancePlan = _insurancePlan;
         this.insurancePlanNumber = _insurancePlanNumber;
@@ -139,17 +141,22 @@ public class BillingInformation {
     /**
      * @return this.billingAddress
      */
-    public Address getBillingAddress() {
+//    public Address getBillingAddress() {
+//        return this.billingAddress;
+//    }
+    public String getBillingAddress() {
         return this.billingAddress;
     }
     /**
      * @param _billingAddress
      * @return
      */
-    public void setBillingAddress(Address _billingAddress) {
+//    public void setBillingAddress(Address _billingAddress) {
+//        this.billingAddress = _billingAddress;
+//    }
+    public void setBillingAddress(String _billingAddress) {
         this.billingAddress = _billingAddress;
     }
-
     /**
      * @param _street
      * @param _zipcode

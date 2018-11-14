@@ -1,3 +1,4 @@
+package spring.model;
 
 import java.util.*;
 
@@ -125,8 +126,13 @@ public class User {
     * @param String _password
     */
    public User login(String _username, String _password) {
-       // TODO implement here
-	   return User;
+	   return this;
+//       if( (this.username == _username) && (this.password == _password) ) {
+//    	   return this;
+//       }
+//       else {
+//    	   return null;
+//       }
    }
 
 }

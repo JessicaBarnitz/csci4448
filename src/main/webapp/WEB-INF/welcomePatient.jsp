@@ -20,6 +20,10 @@
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/personal'">Update Personal Information</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medical'">Update Medical Information</button>
 		<p></p>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/appointment'">Appointments</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/schedule'">Schedule Appointment</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/cancel'">Cancel Appointment</button>
+		
 		
 		<!-- <form NAME="form1" ACTION="formAction.jsp" METHOD="POST"> 
 		<form NAME="form1" ACTION="http://localhost:8080/SpringMVCTutorial/formAction" METHOD="POST">
