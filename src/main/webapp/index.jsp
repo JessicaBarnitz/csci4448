@@ -1,4 +1,6 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page isELIgnored="false" %>
+
 <!Doctype>
 <html>
 <head>
@@ -25,9 +27,10 @@
 			refer patients to outside healthcare providers, they can share the patient's medical information for continuum of care, 
 			with patient consent. 
 		<p>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/patient'" value=("firstName","test")>PATIENT</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/provider'" value=("firstName","test1")>HEALTHCARE PROVIDER</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/admin'" value=("firstName","test2")>ADMIN</button>
+		
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/patient'">PATIENT</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/provider'">HEALTHCARE PROVIDER</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/admin'">ADMIN</button>
 		
 	</div>
 	<img alt="logo" src="images/logo.png">

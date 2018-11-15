@@ -1,4 +1,5 @@
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page isELIgnored="false" %>
 
 <!Doctype>
@@ -12,65 +13,44 @@
 		<h2 style="color:mediumSeaGreen;font-size:60">
 			<strong>Healthcare Portal</strong>
 		</h2>
-		<p style="color:mediumSeaGreen;"><i>This is the ${user} healthcare portal</i></p>
-		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, ${firstName}</strong></p>
-		
-		
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/billing'">Update Billing Information</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/personal'">Update Personal Information</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medical'">Update Medical Information</button>
-		<p></p>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/appointment'">Appointments</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/schedule'">Schedule Appointment</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/cancel'">Cancel Appointment</button>
-		
-		
-		<!-- <form NAME="form1" ACTION="formAction.jsp" METHOD="POST"> 
-		<form NAME="form1" ACTION="http://localhost:8080/SpringMVCTutorial/formAction" METHOD="POST">
-			<input TYPE="HIDDEN" NAME="buttonName">
-			<input TYPE="BUTTON" VALUE="Schedule Appointment" ONCLICK="button1()">
-			<input TYPE="BUTTON" VALUE="Cancel Appointment" ONCLICK="button2()">
-			<input TYPE="BUTTON" VALUE="Update Medical Information" ONCLICK="button3()">
-			<p></p>
-			<input TYPE="BUTTON" VALUE="Update Billing Information" ONCLICK="button4()">
-			<input TYPE="BUTTON" VALUE="Update Personal Information" ONCLICK="button5()">
-			<input TYPE="BUTTON" VALUE="Appointments" ONCLICK="button6()">
-		</form>
-		
-		<script LANGUAGE="JavaScript">
-			
-			function button1()
-			{
-				document.form1.buttonName.value = "Schedule Appointment"
-				form1.submit()
-			}
-			function button2()
-			{
-				document.form1.buttonName.value = "Cancel Appointment"
-				form1.submit()
-			}
-			function button3()
-			{
-				document.form1.buttonName.value = "Update Medical Information"
-				form1.submit()
-			}
-			function button4()
-			{
-				document.form1.buttonName.value = "Update Billing Information"
-				form1.submit()
-			}
-			function button5()
-			{
-				document.form1.buttonName.value = "Update Personal Information"
-				form1.submit()
-			}
-			function button6()
-			{
-				document.form1.buttonName.value = "Appointments"
-				form1.submit()
-			}
-		</script>-->
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, new ${user}</strong></p>
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Please Sign Up:</strong></p>
+		<form:form action="patient" method="post" modelAttribute="patient">
+			<table border="0">
+			<!-- User.java
+		            this.username = ""; 
+			        this.password = "";
+			        this.firstName = "";
+			        this.lastName = "";
+			        this.dateOfBirth = null;-->	
+				<tr>
+					<td>First Name:</td>
+					<td><form:input path="firstName" /></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><form:input path="lastName" /></td>
+				</tr>
+				<tr>
+					<td>Date of Birth:</td>
+					<td><form:input path="dateOfBirth" /></td>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><form:input path="username" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><form:input path="password" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input type="submit" value="Submit" /></td>
+				</tr>
+			</table>
+		</form:form>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>
 </html>
+
+

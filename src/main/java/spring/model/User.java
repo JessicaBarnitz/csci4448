@@ -12,27 +12,27 @@ public class User {
 	/**
      * 
      */
-    private String username;
+    protected String username;
 
     /**
      * 
      */
-    private String password;
+    protected String password;
 
     /**
      * 
      */
-    private String firstName;
+    protected String firstName;
 
     /**
      * 
      */
-    private String lastName;
+    protected String lastName;
 
     /**
      * 
      */
-    public Date dateOfBirth;
+    protected Date dateOfBirth;
 
     /**
      * Default constructor

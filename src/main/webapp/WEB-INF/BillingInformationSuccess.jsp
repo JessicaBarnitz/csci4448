@@ -49,6 +49,15 @@
 				</tr>
 			</table>
 		</form:form>
+		<p></p>
+		<script type="text/javascript">
+			function Redirect()
+			{
+				window.location = "http://localhost:8080/SpringMVCTutorial/patient";
+			}
+			document.write("You will be redirected back to the patient portal in 5 seconds");
+			setTimeout('Redirect()', 5000);
+		</script>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>

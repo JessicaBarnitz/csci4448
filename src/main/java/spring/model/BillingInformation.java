@@ -44,11 +44,11 @@ public class BillingInformation {
      */
     public BillingInformation() {
         this.insurance = false;
-        this.insurancePlan="name";
-        this.insurancePlanNumber="number";
+        this.insurancePlan="";
+        this.insurancePlanNumber="";
         this.effectiveDate=null;
-        this.copay="amount";
-        this.billingAddress="address";
+        this.copay="";
+        this.billingAddress="";
 //        this.billingAddress=null;
     }
 

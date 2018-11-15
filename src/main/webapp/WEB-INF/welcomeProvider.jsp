@@ -15,43 +15,15 @@
 		<p style="color:mediumSeaGreen;"><i>This is the ${user} healthcare portal</i></p>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, ${firstName}</strong></p>
 		
-		<form NAME="form1" ACTION="formAction.jsp" METHOD="POST">
-			<input TYPE="HIDDEN" NAME="buttonName">
-			<input TYPE="BUTTON" VALUE="Search for Patient" ONCLICK="button1()">
-			<input TYPE="BUTTON" VALUE="Schedule Appointment" ONCLICK="button2()">
-			<p></p>
-			<input TYPE="BUTTON" VALUE="Update Patient Personal" ONCLICK="button3()">
-			<input TYPE="BUTTON" VALUE="Update Patient Medical" ONCLICK="button4()">
-			<input TYPE="BUTTON" VALUE="Office Schedule" ONCLICK="button5()">
-		</form>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/searchPatient'">Search for Patient</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/schedule'">Schedule Appointment</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/officeSchedule'">Office Schedule</button>
+		<p></p>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/personal'">Update Patient Personal</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medical'">Update Patient Medical</button>
+		<p></p>
+
 		
-		<script LANGUAGE="JavaScript">
-			function button1()
-			{
-				document.form1.buttonName.value = "Search for Patient"
-				form1.submit()
-			}
-			function button2()
-			{
-				document.form1.buttonName.value = "Schedule Appointment"
-				form1.submit()
-			}
-			function button3()
-			{
-				document.form1.buttonName.value = "Update Patient Personal"
-				form1.submit()
-			}
-			function button4()
-			{
-				document.form1.buttonName.value = "Update Patient Medical"
-				form1.submit()
-			}
-			function button5()
-			{
-				document.form1.buttonName.value = "Office Schedule"
-				form1.submit()
-			}
-		</script>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>

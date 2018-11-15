@@ -4,9 +4,11 @@ import java.util.Map;
 //import java.util.List;
 //import java.util.ArrayList;
 
+import spring.model.BillingInformation;
 import spring.model.MedicalInformation;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 //import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,5 +25,16 @@ public class MedicalController {
 		MedicalInformation medicalInformationForm = new MedicalInformation();
 		model.put("medicalInformationForm", medicalInformationForm);
 		return "MedicalInformation";
+	}
+	@RequestMapping(method = RequestMethod.POST)
+	public String processMedicalInformation(@ModelAttribute("medicalInformationForm") MedicalInformation medicalInformation, Map<String, Object> model) {
+		//implement logic
+		
+		//testing purposes
+		System.out.println("Allergies: " + medicalInformation.getAllergies());
+		System.out.println("Immunizations: " + medicalInformation.getImmunizations());
+		System.out.println("Current Medications: " + medicalInformation.getCurrentMedications());
+		System.out.println("Mental Status Exam: " + medicalInformation.getMentalStatusExam());
+		return "MedicalInformationSuccess";
 	}
 }

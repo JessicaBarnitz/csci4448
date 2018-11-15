@@ -1,7 +1,7 @@
 package spring.model;
 
 
-import java.util.*;
+//import java.util.*;
 
 /**
  * 
@@ -11,11 +11,10 @@ public class Address {
      * 
      */
     private String street;
-
     /**
      * 
      */
-    private int zipcode;
+    private String city;
 
     /**
      * 
@@ -28,25 +27,33 @@ public class Address {
     private String state;
 
     /**
+     * 
+     */
+    private String zipcode;
+
+    /**
      * Default constructor
      */
     public Address() {
         this.street = "";
-        this.zipcode = 0;
+        this.city = "";
         this.county = "";
         this.state = "";
+        this.zipcode = "";
     }
     /**
      * @param _street 
-     * @param _zipcode 
-     * @param county 
-     * @param state
+     * @param _city  
+     * @param _county 
+     * @param _state
+     * @param _zipcode
      */
-    public Address(String _street, int _zipcode, String _county, String _state) {
+    public void setAddress(String _street, String _city, String _county, String _state, String _zipcode) {
         this.street = _street;
-        this.zipcode = _zipcode;
+        this.city = _city;
         this.county = _county;
         this.state = _state;
+        this.zipcode = _zipcode;
     }
 
     /**
@@ -64,36 +71,36 @@ public class Address {
     public String getStreet() {
         return this.street;
     }
+
     /**
      * @param _street
      * @return
      */
-    public void setStreet(String street) {
-        this.street = street;
+    public void setStreet(String _street) {
+        this.street = _street;
     }
-
+    
     /**
      * @return
      */
-    public int getZipcode() {
-        return this.zipcode;
+    public String getCity() {
+        return this.city;
     }
-
+    
     /**
-     * @param _zipcode
+     * @param _city
      * @return
      */
-    public void setZipcode(int _zipcode) {
-        this.zipcode = _zipcode;
+    public void setCity(String _city) {
+        this.city = _city;
     }
-
+    
     /**
      * @return
      */
     public String getCounty() {
         return this.county;
     }
-
     /**
      * @param _county
      * @return
@@ -115,5 +122,20 @@ public class Address {
      */
     public void setState(String _state) {
         this.state = _state;
+    }
+    
+    /**
+     * @return
+     */
+    public String getZipcode() {
+        return this.zipcode;
+    }
+
+    /**
+     * @param _zipcode
+     * @return
+     */
+    public void setZipcode(String _zipcode) {
+        this.zipcode = _zipcode;
     }
 }

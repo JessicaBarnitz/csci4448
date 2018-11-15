@@ -26,9 +26,10 @@ public class WelcomeController {
 	@GetMapping("/patient")
 	public String patient(ModelMap model)
 	{
-		model.addAttribute("firstName", "Justin");
 		model.addAttribute("user", "patient");
-		return "welcomePatient";
+		model.addAttribute("firstName", "Justin");
+//		return "welcomePatient";
+		return "Patient";
 	}
 
 }

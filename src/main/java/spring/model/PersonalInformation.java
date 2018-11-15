@@ -19,7 +19,7 @@ public class PersonalInformation {
     /**
      * 
      */
-    private Address homeAddress;
+    private Address homeAddress;// = new Address();
     /**
      * 
      */
@@ -32,11 +32,11 @@ public class PersonalInformation {
      * Default constructor
      */
     public PersonalInformation() {
-        this.phone = "contact number";
-        this.email = "contact email";
+        this.phone = "";
+        this.email = "";
         this.homeAddress = null;
-        this.emergencyContactName = "emergency contact name";
-        this.emergencyContactPhone = "emergency contact number";
+        this.emergencyContactName = "";
+        this.emergencyContactPhone = "";
     }
    /**
     * @param _phone
