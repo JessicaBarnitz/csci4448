@@ -18,4 +18,3 @@ providers, they can share the patient’s medical information for continuum of c
 
 Progress Report Part 2: 
 https://www.screencast.com/t/9jEKgEpw
-
