@@ -1,9 +1,21 @@
 Name: Jessica Barnitz
 GitHub link:  https://github.com/JessicaBarnitz/csci4448.git
 Title: Healthcare Portal 
-Description: A healthcare portal for a medical office that schedules upcoming and previous patient appointments and securely maintains the patient’s health record.
+
+Description: A healthcare portal for a medical office that schedules upcoming and previous patient appointments and securely maintains the
+patientâ€™s health record
+.
 Project Summary: 
-A healthcare portal for a medical office that schedules upcoming and previous patient appointments and securely maintains the patient’s health record.  Once this system is complete patients can sign up for the portal, log in, request an appointment for a healthcare provider, have full access to their personal information, medical information and billing information, and give consent to share their medical information. The medical office admin can sign up and log in, add patients to the portal, have full access to the medical office schedule, can schedule/reschedule appointments for the healthcare provider, can search for a patient by name or patient number, and have full access to patient personal information and billing information. The healthcare providers can sign up and log in, have full access to the medical office schedule, can schedule/reschedule appointments for the healthcare provider, can search for a patient by name or patient number, have full access to patient personal information and medical information and when healthcare providers refer patients to outside healthcare providers, they can share the patient’s medical information for continuum of care, with patient consent. 
+A healthcare portal for a medical office that schedules upcoming and previous patient appointments and securely maintains the patientâ€™s
+health record.  Once this system is complete patients can sign up for the portal, log in, request an appointment for a healthcare provider,
+have full access to their personal information, medical information and billing information, and give consent to share their medical 
+information. The medical office admin can sign up and log in, add patients to the portal, have full access to the medical office schedule, 
+can schedule/reschedule appointments for the healthcare provider, can search for a patient by name or patient number, and have full access
+to patient personal information and billing information. The healthcare providers can sign up and log in, have full access to the medical 
+office schedule, can schedule/reschedule appointments for the healthcare provider, can search for a patient by name or patient number, have
+full access to patient personal information and medical information and when healthcare providers refer patients to outside healthcare 
+providers, they can share the patientâ€™s medical information for continuum of care, with patient consent.
+
 Progress Report Part 2: 
 https://www.screencast.com/t/9jEKgEpw
 
