@@ -12,8 +12,8 @@
 		<h2 style="color:mediumSeaGreen;font-size:60">
 			<strong>Healthcare Portal</strong>
 		</h2>
-		<p style="color:mediumSeaGreen;"><i>This is the ${user} healthcare portal</i></p>
-		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, ${firstName} </strong></p>
+		<p style="color:mediumSeaGreen;"><i>This is the ${patient.getUser()} healthcare portal</i></p>
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, ${patient.getFirstName()} ${patient.getLastName()} </strong></p>
 		
 		
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/billing'">Update Billing Information</button>

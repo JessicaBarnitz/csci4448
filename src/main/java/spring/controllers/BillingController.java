@@ -23,6 +23,7 @@ public class BillingController {
 //		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		BillingInformation billingInformationForm = new BillingInformation();
 		model.put("billingInformationForm", billingInformationForm);
+		System.out.print("billing get:" + model);
 		return "BillingInformation";
 	}
 	
@@ -31,6 +32,7 @@ public class BillingController {
 		//implement logic
 		
 		//testing purposes
+		System.out.println("billing post:" + model);
 		System.out.println("Insurance Plan? " + billingInformation.getInsurance());
 		System.out.println("Insurance Plan: " + billingInformation.getInsurancePlan());
 		System.out.println("Insurance Plan Number: " + billingInformation.getInsurancePlanNumber());

@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class User {
 
-    private static final User User = null;
+//    private static final User User = null;
 
 	/**
      * 
@@ -127,12 +127,6 @@ public class User {
     */
    public User login(String _username, String _password) {
 	   return this;
-//       if( (this.username == _username) && (this.password == _password) ) {
-//    	   return this;
-//       }
-//       else {
-//    	   return null;
-//       }
    }
 
 }

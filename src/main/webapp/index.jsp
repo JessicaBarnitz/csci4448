@@ -27,8 +27,8 @@
 			refer patients to outside healthcare providers, they can share the patient's medical information for continuum of care, 
 			with patient consent. 
 		<p>
-		
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/patient'">PATIENT</button>
+		<p style="color:mediumSeaGreen;font-size:35;"><strong>Are you a:</strong></p>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newPatient'">PATIENT</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/provider'">HEALTHCARE PROVIDER</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/admin'">ADMIN</button>
 		

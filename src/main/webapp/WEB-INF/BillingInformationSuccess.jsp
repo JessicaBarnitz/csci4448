@@ -14,7 +14,7 @@
 			<strong>Healthcare Portal</strong>
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Billing Information Success</strong></p>
-		<form:form action="billing" method="post" commandName="billingInformationForm">
+		<form:form action="billing" method="POST" commandName="billingInformationForm">
 			<table border="0">
 			<!-- BillingInformation.java
 				    this.insurance = false;
@@ -53,7 +53,8 @@
 		<script type="text/javascript">
 			function Redirect()
 			{
-				window.location = "http://localhost:8080/SpringMVCTutorial/patient";
+				//window.location.replace("http://localhost:8080/SpringMVCTutorial/patient"); //<-object is not stored
+				window.history.go(-2);
 			}
 			document.write("You will be redirected back to the patient portal in 5 seconds");
 			setTimeout('Redirect()', 5000);

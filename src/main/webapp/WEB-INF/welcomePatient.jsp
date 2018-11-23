@@ -15,7 +15,7 @@
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, new ${user}</strong></p>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Please Sign Up:</strong></p>
-		<form:form action="patient" method="post" modelAttribute="patient">
+		<form:form action="patient" method="POST" modelAttribute="patient">
 			<table border="0">
 			<!-- User.java
 		            this.username = ""; 
