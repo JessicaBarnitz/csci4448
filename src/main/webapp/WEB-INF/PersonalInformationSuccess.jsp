@@ -47,7 +47,8 @@
 		<script type="text/javascript">
 			function Redirect()
 			{
-				window.location = "http://localhost:8080/SpringMVCTutorial/patient";
+				//window.location = "http://localhost:8080/SpringMVCTutorial/patient"; //<-object is not stored
+				window.history.go(-2);
 			}
 			document.write("You will be redirected back to the patient portal in 5 seconds");
 			setTimeout('Redirect()', 5000);

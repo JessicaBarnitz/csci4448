@@ -29,8 +29,8 @@
 		<p>
 		<p style="color:mediumSeaGreen;font-size:35;"><strong>Are you a:</strong></p>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newPatient'">PATIENT</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/provider'">HEALTHCARE PROVIDER</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/admin'">ADMIN</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newProvider'">HEALTHCARE PROVIDER</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newAdmin'">ADMIN</button>
 		
 	</div>
 	<img alt="logo" src="images/logo.png">
