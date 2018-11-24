@@ -32,7 +32,26 @@
 				</tr>
 				<tr>
 					<td>Home Address:</td>
-					<td>${personalInformationForm.homeAddress}</td>
+					<td>${personalInformationForm.homeAddress.street}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>${personalInformationForm.homeAddress.city}</td>
+					</tr>
+				<tr>
+					<td></td>
+					<td>${personalInformationForm.homeAddress.county}</td>
+					</tr>
+				<tr>
+					<td></td>
+					<td>${personalInformationForm.homeAddress.state}</td>
+					</tr>
+				<tr>
+					<td></td>
+					<td>${personalInformationForm.homeAddress.zipcode}</td>
+				</tr>
+				<tr>
+					<td style="margin: 10px; padding:5px"></td>
 				</tr>
 				<tr>
 					<td>Emergency Contact Name:</td>

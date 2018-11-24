@@ -4,6 +4,8 @@ import java.util.Map;
 //import java.util.List;
 //import java.util.ArrayList;
 
+import spring.model.Address;
+import spring.model.Patient;
 import spring.model.PersonalInformation;
 
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,8 @@ public class PersonalController {
 	public String viewPersonalInformation(Map<String, Object> model) {
 //		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		PersonalInformation personalInformationForm = new PersonalInformation();
+		Address address = new Address();
+		personalInformationForm.setHomeAddress(address);
 		model.put("personalInformationForm", personalInformationForm);
 		return "PersonalInformation";
 	}
@@ -31,12 +35,9 @@ public class PersonalController {
 		//implement logic
 		
 		//testing purposes
-//		System.out.println("First Name: " + personalInformation.getFirstName());
-//		System.out.println("Last Name: " + personalInformation.getLastName());
-//		System.out.println("Date of Birth: " + personalInformation.getDateOfBirth());
 		System.out.println("Contact Phone: " + personalInformation.getPhone());
 		System.out.println("Contact Email: " + personalInformation.getEmail());
-		System.out.println("Home Address: " + personalInformation.getHomeAddress());
+//		System.out.println("Home Address: " + personalInformation.getHomeAddress());
 		System.out.println("Emergency Contact Phone: " + personalInformation.getEmergencyContactPhone());
 		System.out.println("Emergency Contact Name: " + personalInformation.getEmergencyContactName());
 		return "PersonalInformationSuccess";

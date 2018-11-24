@@ -19,7 +19,7 @@ public class PersonalInformation {
     /**
      * 
      */
-    private Address homeAddress;// = new Address();
+    private Address homeAddress;
     /**
      * 
      */
@@ -40,7 +40,7 @@ public class PersonalInformation {
     }
    /**
     * @param _phone
-    * @param email
+    * @param _email
     * @param _homeAddress
     * @param _emergencyContactName
     * @param _emergencyContactNumber
@@ -53,14 +53,14 @@ public class PersonalInformation {
         this.emergencyContactPhone = _emergencyContactPhone;
     }
     /**
-    * @return
+    * @return this.phone
     */
     public String getPhone() {
         return this.phone;
     }
     /**
     * @param _phone
-    * @return
+    *
     */
     public void setPhone(String _phone) {
         this.phone = _phone;

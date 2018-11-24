@@ -31,10 +31,33 @@
 					<td><form:input path="email" /></td>
 				</tr>
 				<tr>
-					<td>Home Address:</td>
-					<td><form:input path="homeAddress" /></td>
+					<td>Home Address Street:</td>
+					<td><form:input path="homeAddress.street" /></td>
 				</tr>
 				<tr>
+					<td>Home Address City:</td>
+					<td><form:input path="homeAddress.city" /></td>
+				</tr>
+				<tr>
+					<td>Home Address County:</td>
+					<td><form:input path="homeAddress.county" /></td>
+				</tr>
+				<tr>
+					<td>Home Address State:</td>
+					<td><form:input path="homeAddress.state" /></td>
+				</tr>
+				<tr>
+					<td>Home Address Zipcode:</td>
+					<td><form:input path="homeAddress.zipcode" /></td>
+				</tr>
+				<tr>
+					<td style="margin: 10px; padding:5px"></td>
+				</tr>
+				<tr>
+					<td>In Case of Emergency</td>
+				</tr>
+				<tr>
+					
 					<td>Emergency Contact Name:</td>
 					<td><form:input path="emergencyContactName" /></td>
 				</tr>
@@ -43,7 +66,7 @@
 					<td><form:input path="emergencyContactPhone" /></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Submit" /></td>
+					<td colspan="2" align="center"><input style="color:mediumSeaGreen" type="submit" value="Submit" /></td>
 				</tr>
 			</table>
 		</form:form>

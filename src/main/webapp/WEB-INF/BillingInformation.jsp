@@ -44,11 +44,30 @@
 					<td><form:input path="copay" /></td>
 				</tr>
 				<tr>
-					<td>Billing Address:</td>
-					<td><form:input path="billingAddress" /></td>
+					<td>Billing Address Street:</td>
+					<td><form:input path="billingAddress.street" /></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Submit" /></td>
+					<td>Billing Address City:</td>
+					<td><form:input path="billingAddress.city" /></td>
+				</tr>
+				<tr>
+					<td>Billing Address County:</td>
+					<td><form:input path="billingAddress.county" /></td>
+				</tr>
+				<tr>
+					<td>Billing Address State:</td>
+					<td><form:input path="billingAddress.state" /></td>
+				</tr>
+				<tr>
+					<td>Billing Address Zipcode:</td>
+					<td><form:input path="billingAddress.zipcode" /></td>
+				</tr>
+				<tr>
+					<td style="margin: 10px; padding:5px"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input style="color:mediumSeaGreen" type="submit" value="Submit" /></td>
 				</tr>
 			</table>
 		</form:form>

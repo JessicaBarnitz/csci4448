@@ -4,6 +4,7 @@ import java.util.Map;
 //import java.util.List;
 //import java.util.ArrayList;
 
+import spring.model.Address;
 import spring.model.BillingInformation;
 
 import org.springframework.stereotype.Controller;
@@ -22,8 +23,10 @@ public class BillingController {
 	public String viewBillingInformation(Map<String, Object> model) {
 //		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		BillingInformation billingInformationForm = new BillingInformation();
+		Address address = new Address();
+		billingInformationForm.setBillingAddress(address);
 		model.put("billingInformationForm", billingInformationForm);
-		System.out.print("billing get:" + model);
+		System.out.println("billing get:" + model);
 		return "BillingInformation";
 	}
 	

@@ -45,7 +45,23 @@
 				</tr>
 				<tr>
 					<td>Billing Address:</td>
-					<td>${billingInformationForm.billingAddress}</td>
+					<td>${billingInformationForm.billingAddress.street}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>${billingInformationForm.billingAddress.city}</td>
+					</tr>
+				<tr>
+					<td></td>
+					<td>${billingInformationForm.billingAddress.county}</td>
+					</tr>
+				<tr>
+					<td></td>
+					<td>${billingInformationForm.billingAddress.state}</td>
+					</tr>
+				<tr>
+					<td></td>
+					<td>${billingInformationForm.billingAddress.zipcode}</td>
 				</tr>
 			</table>
 		</form:form>
