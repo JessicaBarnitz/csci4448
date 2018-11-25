@@ -149,16 +149,6 @@ public class BillingInformation {
     public void setBillingAddress(Address _billingAddress) {
         this.billingAddress = _billingAddress;
     }
-    /**
-     * @param _street
-     * @param _zipcode
-     * @param _county
-     * @param _state
-     * @return
-     */
-    public void setBillingAddress(String _street, int _zipcode, String _county, String _state) {
-        // TODO implement here
-    }
 
     /**
      * @param patientNum

@@ -11,7 +11,11 @@ public class Appointment {
     /**
      * 
      */
-    private Date datetime;
+    private Date date;
+    /**
+     * 
+     */
+    private String time;
     /**
      * 
      */
@@ -19,47 +23,64 @@ public class Appointment {
     /**
      * 
      */
-//    private HealthcareProvider healthcareProvider;
+    private HealthcareProvider healthcareProvider;
     /**
      * 
      */
-//    private Patient patient;
+    private Patient patient;
     /**
      * Default constructor
      */
     public Appointment() {
-        this.datetime = null;
+        this.date = null;
+        this.time = "";
         this.reason = "";
-//        this.healthcareProvider = null;
-//        this.patient = null;
+        this.healthcareProvider = null;
+        this.patient = null;
     }
 
     /**
-     * @param _datetime 
+     * @param _date
+     * @param _time
      * @param _reason 
      * @param _healthcareProvider 
      * @param _patient
      */
-    public Appointment(Date _datetime, String _reason) {//, HealthcareProvider _healthcareProvider, Patient _patient) {
-        this.datetime = _datetime;
+    public Appointment(Date _date, String _time, String _reason, HealthcareProvider _healthcareProvider, Patient _patient) {
+        this.date = _date;
+        this.time = _time;
         this.reason = _reason;
-//        this.healthcareProvider = _healthcareProvider;
-//        this.patient = _patient;
+        this.healthcareProvider = _healthcareProvider;
+        this.patient = _patient;
     }
 
     /**
      * @return
      */
-    public Date getDatetime() {
-        return this.datetime;
+    public Date getDate() {
+        return this.date;
     }
 
     /**
-     * @param Date _datetime 
+     * @param Date _date 
      * @return
      */
-    public void setDatetime(Date _datetime) {
-        this.datetime = _datetime;
+    public void setDate(Date _date) {
+        this.date = _date;
+    }
+    /**
+     * @return
+     */
+    public String getTime() {
+        return this.time;
+    }
+
+    /**
+     * @param String _time 
+     * @return
+     */
+    public void setTime(String _time) {
+        this.time = _time;
     }
 
     /**
@@ -80,43 +101,32 @@ public class Appointment {
     /**
      * @return
      */
-//    public HealthcareProvider getHealthcareProvider() {
-//        return this.healthcareProvider;
-//    }
+    public HealthcareProvider getHealthcareProvider() {
+        return this.healthcareProvider;
+    }
 
     /**
      * @param HealthcareProvider _healthcareProvider 
      * @return
      */
-//    public void sethealthcareProvider(HealthcareProvider _healthcareProvider) {
-//        this.healthcareProvider = _healthcareProvider;
-//    }
+    public void sethealthcareProvider(HealthcareProvider _healthcareProvider) {
+        this.healthcareProvider = _healthcareProvider;
+    }
 
     /**
      * @return
      */
-//    public Patient getPatient() {
-//        return this.patient;
-//    }
-
-    /**
-     * @param Patient _patient 
-     * @return
-     */
-//    public void setPatient(Patient _patient) {
-//        this.patient = _patient;
-//    }
+    public Patient getPatient() {
+        return this.patient;
+    }
 
     /**
      * @param Patient _patient 
-     * @param Date _datetime 
-     * @param String _reason 
      * @return
      */
-//    public boolean scheduleAppointment(Patient _patient, Date _datetime, String _reason) {
-//        // TODO implement here
-//        return false;
-//    }
+    public void setPatient(Patient _patient) {
+        this.patient = _patient;
+    }
 
     /**
      * @param Patient _patient 
@@ -124,10 +134,21 @@ public class Appointment {
      * @param String _reason 
      * @return
      */
-//    public boolean cancelAppointment(Patient _patient, Date _datetime, String _reason) {
-//        // TODO implement here
-//        return false;
-//    }
+    public boolean scheduleAppointment(Patient _patient, Date _date, String _time, String _reason) {
+        System.out.println("Schedule appointment");
+        return false;
+    }
+
+    /**
+     * @param Patient _patient 
+     * @param Date _datetime 
+     * @param String _reason 
+     * @return
+     */
+    public boolean cancelAppointment(Patient _patient, Date _date, String _time) {
+    	System.out.println("cancel appointment");
+        return false;
+    }
 
     /**
      * @param Patient _patient 
@@ -135,9 +156,9 @@ public class Appointment {
      * @param String _reason 
      * @param HealthcareProvider healthcareProvider 
      * @return
-//     */
-//    public void patientAppointment(Patient _patient, Date _datetime, String _reason, HealthcareProvider healthcareProvider) {
-//        // TODO implement here
-//    }
+     */
+    public void patientAppointment(Patient _patient, Date _datetime, String _reason, HealthcareProvider healthcareProvider) {
+        // TODO implement here
+    }
 
 }

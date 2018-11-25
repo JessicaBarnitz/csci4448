@@ -6,9 +6,6 @@ import java.util.*;
  * 
  */
 public class User {
-
-//    private static final User User = null;
-
 	/**
      * 
      */

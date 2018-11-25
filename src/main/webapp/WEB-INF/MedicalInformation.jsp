@@ -58,7 +58,7 @@
 					<td><form:input path="consent" /></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Submit" /></td>
+					<td colspan="2" align="center"><input style="color:mediumSeaGreen" type="submit" value="Submit" /></td>
 				</tr>
 			</table>
 		</form:form>

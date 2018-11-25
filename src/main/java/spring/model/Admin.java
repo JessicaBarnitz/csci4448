@@ -7,12 +7,13 @@ import java.util.*;
  */
 public class Admin extends User {
 
-	private String user = "admin";
+	private String user;
     /**
      * Default constructor
      */
-//    public Admin() {
-//    }
+    public Admin() {
+    	this.user = "admin";
+    }
 
     /**
     * @return this.user

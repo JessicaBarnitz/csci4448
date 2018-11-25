@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class HealthcareProvider extends User {
 	
-	private String user = "healthcare provider";
+	private String user;
     /**
      * 
      */
@@ -16,31 +16,44 @@ public class HealthcareProvider extends User {
      * Default constructor
      */
     public HealthcareProvider() {
+    	this.user = "healthcare provider";
+    	this.patientList = new ArrayList<Patient>();
     }
     /**
      * 
+     * @param none
+     * @return this.user
      */
-
+     public String getUser() {
+         return this.user;
+     }
+     
+    /**
+     * 	getter: patientList
+     *  @param none
+     *  @return this.patientList
+     */
     public List<Patient> getPatientList() {
-        return patientList;
+        return this.patientList;
     }
-
+    
+    /**
+     * 	setter: patientList
+     *  @param List<Patient> patientList
+     *  @return none
+     */
     public void setPatientList(List<Patient> patientList) {
         this.patientList = patientList;
     }
-    /**
-    * @return this.user
-    */
-    public String getUser() {
-        return this.user;
-    }
+    
 
     /**
-     * @param Patient p 
-     * @return
+     * adds a patient to the patientList
+     * @param Patient _patient 
+     * @return none
      */
-    public void addPatient(Patient p) {
-        // TODO implement here
+    public void addPatient(Patient _patient) {
+        patientList.add(_patient);
     }
 
     /**
