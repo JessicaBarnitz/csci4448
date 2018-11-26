@@ -42,6 +42,16 @@ public class Address {
         this.zipcode = "";
     }
     /**
+     * Overloaded constructor
+     */
+    public Address(String _street, String _city, String _county, String _state, String _zipcode) {
+        this.street = _street;
+        this.city = _city;
+        this.county = _county;
+        this.state = _state;
+        this.zipcode = _zipcode;
+    }
+    /**
      * @param _street 
      * @param _city  
      * @param _county 
@@ -57,83 +67,94 @@ public class Address {
     }
 
     /**
-     * @return
+     * getter
+     * @return this
      */
-    public String getAddress() {
-        // TODO implement here
-        //depends on format/layout on how best to return address
-        return "";
+    public Address getAddress() {
+        return this;
     }
 
     /**
-     * @return
+     * getter
+     * @return this.street
      */
     public String getStreet() {
         return this.street;
     }
+    /**
+     * formats the address as a comma separated string
+     * @return this.street + ", " + this.city + ", " + this.county + ", " + this.state + ", " + this.zipcode
+     */
+    public String showAddress() {
+        return this.street + ", " + this.city + ", " + this.county + ", " + this.state + ", " + this.zipcode;
+    }
 
     /**
+     * setter
      * @param _street
-     * @return
      */
     public void setStreet(String _street) {
         this.street = _street;
     }
     
     /**
-     * @return
+     * getter
+     * @return this.city
      */
     public String getCity() {
         return this.city;
     }
     
     /**
+     * setter
      * @param _city
-     * @return
      */
     public void setCity(String _city) {
         this.city = _city;
     }
     
     /**
-     * @return
+     * getter
+     * @return this.county
      */
     public String getCounty() {
         return this.county;
     }
     /**
+     * setter
      * @param _county
-     * @return
      */
     public void setCounty(String _county) {
         this.county = _county;
     }
 
     /**
-     * @return
+     * getter
+     * @return this.state
      */
     public String getState() {
         return this.state;
     }
 
     /**
+     * setter
      * @param _state
-     * @return
      */
     public void setState(String _state) {
         this.state = _state;
     }
     
     /**
-     * @return
+     * getter
+     * @return this.zipcode
      */
     public String getZipcode() {
         return this.zipcode;
     }
 
     /**
+     * setter
      * @param _zipcode
-     * @return
      */
     public void setZipcode(String _zipcode) {
         this.zipcode = _zipcode;

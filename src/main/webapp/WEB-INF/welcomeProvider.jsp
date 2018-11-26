@@ -36,6 +36,10 @@
 					<td><form:input path="dateOfBirth" /></td>
 				</tr>
 				<tr>
+					<td>Specialty:</td>
+					<td><form:input path="specialty" /></td>
+				</tr>
+				<tr>
 					<td>Username:</td>
 					<td><form:input path="username" /></td>
 				</tr>

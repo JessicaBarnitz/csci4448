@@ -30,17 +30,17 @@ public class MedicalOffice {
     /**
      * 
      */
-    private List<HealthcareProvider> healthcareProviderList;
+    private static List<HealthcareProvider> healthcareProviderList;
 
     /**
      * 
      */
-    private List<Admin> adminList;
+    private static List<Admin> adminList;
 
     /**
      * 
      */
-    private List<Patient> patientList;
+    private static List<Patient> patientList;
 
     /**
      * 
@@ -51,11 +51,12 @@ public class MedicalOffice {
      */
     public MedicalOffice() {
         this.name = "";
-        this.address = null;
+        this.address = new Address();
         this.phone = "";
         this.website = "";
-//        List<healthcareProvider> healthcareProviderList = Collections.emptyList();
-        this.adminList = null;
+        healthcareProviderList = new ArrayList<HealthcareProvider>();
+        adminList = new ArrayList<Admin>();
+        patientList = new ArrayList<Patient>();
     }
         /**
      * @param _name 
@@ -65,13 +66,14 @@ public class MedicalOffice {
      * @param _heathcareProviderList 
      * @param _adminList
      */
-    public MedicalOffice(String _name, Address _address, String _phone, String _website, List<HealthcareProvider> _heathcareProviderList, List<Admin> _adminList) {
+    public MedicalOffice(String _name, Address _address, String _phone, String _website, List<HealthcareProvider> _heathcareProviderList, List<Admin> _adminList, List<Patient> _patientList) {
         this.name = _name;
         this.address = _address;
         this.phone = _phone;
         this.website = _website;
-        this.healthcareProviderList = _heathcareProviderList;
-        this.adminList = _adminList;
+        healthcareProviderList = _heathcareProviderList;
+        adminList = _adminList;
+        patientList = _patientList;
     }
 
     public String getName() {
@@ -107,27 +109,27 @@ public class MedicalOffice {
     }
 
     public List<HealthcareProvider> getHealthcareProviderList() {
-        return this.healthcareProviderList;
+        return healthcareProviderList;
     }
 
     public void setHealthcareProviderList(List<HealthcareProvider> _healthcareProviderList) {
-        this.healthcareProviderList = _healthcareProviderList;
+        healthcareProviderList = _healthcareProviderList;
     }
 
     public List<Admin> getAdminList() {
-        return this.adminList;
+        return adminList;
     }
 
     public void setAdminList(List<Admin> _adminList) {
-        this.adminList = _adminList;
+        adminList = _adminList;
     }
 
     public List<Patient> getPatientList() {
-        return this.patientList;
+        return patientList;
     }
 
     public void setPatientList(List<Patient> _patientList) {
-        this.patientList = _patientList;
+        patientList = _patientList;
     }
 
     public MedicalOfficeSchedule getCalender() {
@@ -139,36 +141,49 @@ public class MedicalOffice {
     }
    /**
     * add healthcare provider to the healthcare provider list
-    * @param HealthcareProvider _healthcareProvider
+    * @param _healthcareProvider
     * @return
     */
-   public void addHealthcareProvider(HealthcareProvider _healthcareprovider) {
-       this.healthcareProviderList.add(_healthcareprovider);
+   public static void addHealthcareProvider(HealthcareProvider _healthcareprovider) {
+       healthcareProviderList.add(_healthcareprovider);
    }
    /**
     * add admin to the admin list
-    * @param Admin _admin
+    * @param _admin
     * @return
     */
-   public void addAdmin(Admin _admin) {
-       this.adminList.add(_admin);
+   public static void addAdmin(Admin _admin) {
+       adminList.add(_admin);
    }
 
    /**
     * add patient to the patient list
-    * @param Patient _patient
+    * @param _patient
     * @return
     */
-   public void addPatient(Patient _patient) {
-       this.patientList.add(_patient);
+   public static void addPatient(Patient _patient) {
+       patientList.add(_patient);
    }
 
    /**
-    * formats the address as a comma seperated string
+    * formats the address as a comma separated string
     * @return address.getStreet() + ", " + address.getCity() + ", " + address.getCounty() + ", " + address.getState() + ", " + address.getZipcode()
     */
    public String showAddress() {
-       return(address.getStreet() + ", " + address.getCity() + ", " + address.getCounty() + ", " + address.getState() + ", " + address.getZipcode());
+	   return address.showAddress();
+  }
+   /**
+    * formats the list of healthcare providers by first and last name and specialty as a comma separated string
+    * @return hcp
+    */
+   public String showHealthcareProviders() {
+	   ListIterator<HealthcareProvider> iterator = healthcareProviderList.listIterator();
+	   String hcp = "";
+	   while(iterator.hasNext()) {
+		   HealthcareProvider i = iterator.next();
+		   hcp += "Dr. " + i.getFirstName() + " " + i.getLastName() + ", " +  i.getSpecialty() + "\n";
+	   }
+	   return hcp;
    }
 
 }

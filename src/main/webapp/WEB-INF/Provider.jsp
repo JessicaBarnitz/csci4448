@@ -13,7 +13,7 @@
 			<strong>Healthcare Portal</strong>
 		</h2>
 		<p style="color:mediumSeaGreen;"><i>This is the ${provider.getUser()} healthcare portal</i></p>
-		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, ${provider.getFirstName()} ${provider.getLastName() }</strong></p>
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Welcome, Dr. ${provider.getFirstName()} ${provider.getLastName() }</strong></p>
 		
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/searchPatient'">Search for Patient</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/schedule'">Schedule Appointment</button>
