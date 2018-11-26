@@ -2,20 +2,17 @@ package spring.model;
 
 import java.util.*;
 
-/**
- * 
- */
 public class HealthcareProvider extends User {
 	/**
-     * 
-     */
+	 * A string describing the type of user
+	 */
 	private String user;
     /**
-     * 
+     * A list of the healthcare provider's patients
      */
     private List<Patient> patientList;
     /**
-     * 
+     * String describing the healthcare provider's specialty
      */
     private String specialty;
     /**
@@ -28,12 +25,12 @@ public class HealthcareProvider extends User {
     }
     /**
      * Overloaded constructor
-     * @param _username
-     * @param _password
-     * @param _firstName
-     * @param _lastName
-     * @param _dateOfBirth
-     * @param _specialty
+     * @param String _username
+     * @param String _password
+     * @param String _firstName
+     * @param String _lastName
+     * @param Date _dateOfBirth
+     * @param String _specialty
      */
     public HealthcareProvider(String _username, String _password, String _firstName, String _lastName, Date _dateOfBirth, String _specialty){
     	this.user = "healthcare provider";
@@ -46,61 +43,53 @@ public class HealthcareProvider extends User {
         this.specialty = _specialty;
     }
     /**
-     * getter
-     * @param none
-     * @return this.user
-     */
-     public String getUser() {
-         return this.user;
-     }
-     /**
-      * setter
-      * @param _specialty
-      */
-      public void setSpecialty(String _specialty) {
-    	  this.specialty = _specialty;
-      }
-      /**
-       * getter
-       * @param none
-       * @return this.specialty
-       */
-       public String getSpecialty() {
-           return this.specialty;
-       }
-     
-    /**
-     * 	getter
-     *  @param none
-     *  @return this.patientList
-     */
+	 * getter
+	 * @return this.user
+	 */
+	 public String getUser() {
+	     return this.user;
+	 }
+	 /**
+	  * setter
+	  * @param String _specialty
+	  */
+	  public void setSpecialty(String _specialty) {
+		  this.specialty = _specialty;
+	  }
+   /**
+    * getter
+    * @return this.specialty
+    */
+	public String getSpecialty() {
+		return this.specialty;
+	}
+	/**
+	 * 	getter
+	 *  @return this.patientList
+	 */
     public List<Patient> getPatientList() {
         return this.patientList;
     }
-    
-    /**
-     * 	setter
-     *  @param List<Patient> patientList
-     *  @return none
-     */
-    public void setPatientList(List<Patient> patientList) {
-        this.patientList = patientList;
-    }
-    
-
-    /**
-     * adds a patient to the patientList
-     * @param Patient _patient 
-     * @return none
-     */
+	/**
+	 * 	setter
+	 *  @param List<Patient> patientList
+	 */
+	public void setPatientList(List<Patient> patientList) {
+	    this.patientList = patientList;
+	}
+	/**
+	 * adds a patient to the patientList
+	 * @param Patient _patient 
+	 */
     public void addPatient(Patient _patient) {
         patientList.add(_patient);
     }
-
     /**
      * login ensures that the username and password are correct
      * @param String _username
      * @param String _password
+     * @return this on success
+     * @return null on failure
      */
     public HealthcareProvider login(String _username, String _password) {
         if( (this.username == _username) && (this.password == _password) ) {

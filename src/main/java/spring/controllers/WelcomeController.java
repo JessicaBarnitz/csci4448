@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import spring.model.Admin;
 import spring.model.HealthcareProvider;
+import spring.model.MedicalOffice;
 import spring.model.Patient;
 
 import org.springframework.ui.Model;
@@ -26,16 +27,16 @@ public class WelcomeController {
 		return "welcomeAdmin";
 	}
 
-	@GetMapping("/newProvider")
-	public String provider(ModelMap model)
-	{
-		model.addAttribute("firstName", "providerName");  //default attributes
-		model.addAttribute("user", "provider"); //default attributes
-		
-		HealthcareProvider provider = new HealthcareProvider();
-		model.put("provider", provider);
-		return "welcomeProvider";
-	}
+//	@GetMapping("/newProvider")
+//	public String provider(ModelMap model)
+//	{
+//		model.addAttribute("firstName", "providerName");  //default attributes
+//		model.addAttribute("user", "provider"); //default attributes
+//		
+//		HealthcareProvider provider = new HealthcareProvider();
+//		model.put("provider", provider);
+//		return "welcomeProvider";
+//	}
 	
 	@GetMapping("/newPatient")
 	public String patient(ModelMap model)

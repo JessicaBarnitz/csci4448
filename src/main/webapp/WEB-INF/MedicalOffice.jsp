@@ -16,15 +16,17 @@
 			<strong>${medicalOffice.getName()} Medical Office</strong>
 		</p>
 		<p style="color:darkSlateGray;font-size:20;">
-			<strong>Website:</strong> ${medicalOffice.getWebsite()}
-			<br/>
 			<strong>Contact:</strong> ${medicalOffice.getPhone()}
+			<br/>
+			<strong>Website:</strong> ${medicalOffice.getWebsite()}
 			<br/>
 			<strong>Address:</strong> ${medicalOffice.showAddress()}
 		</p>
 		
 		<p>
-			${medicalOffice.getName()} has these doctors: ${medicalOffice.showHealthcareProviders()}
+			${medicalOffice.getName()} has these doctors: 
+			<br/>
+			${medicalOffice.showHealthcareProviders()}
 		</p>
 		<p style="color:mediumSeaGreen;font-size:35;"><strong>Signup as a:</strong></p>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newPatient'">PATIENT</button>

@@ -22,8 +22,7 @@
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/personal'">Update Patient Personal</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medical'">Update Patient Medical</button>
 		<p></p>
-
-		
+		<button style="color:mediumSeaGreen;" "type="button" onclick="window.history.go(-2)">Back</button>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>

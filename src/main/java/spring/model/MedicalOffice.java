@@ -6,7 +6,7 @@ import java.util.*;
  * 
  */
 public class MedicalOffice {
-
+	private static MedicalOffice medicalOfficeInstance = null;
     /**
      * 
      */
@@ -46,18 +46,18 @@ public class MedicalOffice {
      * 
      */
     private MedicalOfficeSchedule calender;
-    /**
-     * Default constructor
-     */
-    public MedicalOffice() {
-        this.name = "";
-        this.address = new Address();
-        this.phone = "";
-        this.website = "";
-        healthcareProviderList = new ArrayList<HealthcareProvider>();
-        adminList = new ArrayList<Admin>();
-        patientList = new ArrayList<Patient>();
-    }
+//    /**
+//     * Default constructor
+//     */
+//    public MedicalOffice() {
+//        this.name = "";
+//        this.address = new Address();
+//        this.phone = "";
+//        this.website = "";
+//        healthcareProviderList = new ArrayList<HealthcareProvider>();
+//        adminList = new ArrayList<Admin>();
+//        patientList = new ArrayList<Patient>();
+//    }
         /**
      * @param _name 
      * @param _address 
@@ -75,7 +75,13 @@ public class MedicalOffice {
         adminList = _adminList;
         patientList = _patientList;
     }
-
+    public static MedicalOffice getInstance(String _name, Address _address, String _phone, String _website, List<HealthcareProvider> _heathcareProviderList, List<Admin> _adminList, List<Patient> _patientList) {
+    	if (medicalOfficeInstance == null) {
+    		medicalOfficeInstance = new MedicalOffice(_name, _address, _phone, _website, _heathcareProviderList, _adminList, _patientList);
+    	}
+    	return medicalOfficeInstance;
+    }
+    
     public String getName() {
         return this.name;
     }
@@ -108,7 +114,7 @@ public class MedicalOffice {
         this.website = _website;
     }
 
-    public List<HealthcareProvider> getHealthcareProviderList() {
+    public static List<HealthcareProvider> getHealthcareProviderList() {
         return healthcareProviderList;
     }
 
@@ -172,11 +178,24 @@ public class MedicalOffice {
    public String showAddress() {
 	   return address.showAddress();
   }
+//   /**
+//    * formats the list of healthcare providers by first and last name and specialty as a comma separated string
+//    * @return hcp
+//    */
+//   public String showHealthcareProviders() {
+//	   ListIterator<HealthcareProvider> iterator = healthcareProviderList.listIterator();
+//	   String hcp = "";
+//	   while(iterator.hasNext()) {
+//		   HealthcareProvider i = iterator.next();
+//		   hcp += "Dr. " + i.getFirstName() + " " + i.getLastName() + ", " +  i.getSpecialty() + "\n";
+//	   }
+//	   return hcp;
+//   }
    /**
     * formats the list of healthcare providers by first and last name and specialty as a comma separated string
     * @return hcp
     */
-   public String showHealthcareProviders() {
+   public static String showHealthcareProviders() {
 	   ListIterator<HealthcareProvider> iterator = healthcareProviderList.listIterator();
 	   String hcp = "";
 	   while(iterator.hasNext()) {
