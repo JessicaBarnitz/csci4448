@@ -16,16 +16,16 @@ import org.springframework.ui.ModelMap;
 @RequestMapping(path="/")
 public class WelcomeController {
 	
-	@GetMapping("/newAdmin")
-	public String admin(ModelMap model)
-	{
-		model.addAttribute("firstName", "adminName");  //default attributes
-		model.addAttribute("user", "admin");  //default attributes
-		
-		Admin admin = new Admin();
-		model.put("admin", admin);
-		return "welcomeAdmin";
-	}
+//	@GetMapping("/newAdmin")
+//	public String admin(ModelMap model)
+//	{
+//		model.addAttribute("firstName", "adminName");  //default attributes
+//		model.addAttribute("user", "admin");  //default attributes
+//		
+//		Admin admin = new Admin();
+//		model.put("admin", admin);
+//		return "welcomeAdmin";
+//	}
 
 //	@GetMapping("/newProvider")
 //	public String provider(ModelMap model)
@@ -38,15 +38,15 @@ public class WelcomeController {
 //		return "welcomeProvider";
 //	}
 	
-	@GetMapping("/newPatient")
-	public String patient(ModelMap model)
-	{
-		model.addAttribute("firstName", "patientName"); //default attributes
-		model.addAttribute("user", "patient"); //default attributes
-		
-		Patient patient = new Patient();
-		model.put("patient", patient);
-		return "welcomePatient";
-	}
+//	@GetMapping("/newPatient")
+//	public String patient(ModelMap model)
+//	{
+//		model.addAttribute("firstName", "patientName"); //default attributes
+//		model.addAttribute("user", "patient"); //default attributes
+//		
+//		Patient patient = new Patient();
+//		model.put("patient", patient);
+//		return "welcomePatient";
+//	}
 
 }

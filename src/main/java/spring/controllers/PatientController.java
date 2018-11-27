@@ -1,7 +1,6 @@
 package spring.controllers;
 
-import spring.model.User;
-import spring.model.BillingInformation;
+import spring.model.MedicalOffice;
 import spring.model.Patient;
 
 import java.util.Map;
@@ -20,13 +19,28 @@ import org.springframework.ui.ModelMap;
 @RequestMapping(value="/")
 public class PatientController {
 	
+	@GetMapping("/newPatient")
+	public String patient(ModelMap model)
+	{
+		model.addAttribute("firstName", "patientName"); //default attributes
+		model.addAttribute("user", "patient"); //default attributes
+		
+		Patient patient = new Patient();
+		model.put("patient", patient);
+		System.out.println("1 patient ID: " + patient.getPatientID());
+		return "welcomePatient";
+	}
+	
 	@PostMapping("/patient")
 	public String viewPatient(@ModelAttribute("patient") Patient patient) {
-//		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		System.out.println(patient);
+		MedicalOffice.addPatient(patient);
+		
 		System.out.println("First Name: " + patient.getFirstName());
 		System.out.println("Last Name: " + patient.getLastName());
 		System.out.println("Date of Birth: " + patient.getDateOfBirth());
+		System.out.println("patient ID: " + patient.getPatientID());
+		
 		return "Patient";
 	}
 }

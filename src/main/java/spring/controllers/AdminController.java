@@ -2,6 +2,7 @@ package spring.controllers;
 
 import spring.model.User;
 import spring.model.Admin;
+import spring.model.MedicalOffice;
 
 import java.util.Map;
 
@@ -19,13 +20,24 @@ import org.springframework.ui.ModelMap;
 @RequestMapping(value="/")
 public class AdminController {
 	
+	@GetMapping("/newAdmin")
+	public String admin(ModelMap model)
+	{
+		Admin admin = new Admin();
+		model.put("admin", admin);
+		return "welcomeAdmin";
+	}
+	
 	@PostMapping("/admin")
 	public String viewPatient(@ModelAttribute("admin") Admin admin) {
-//		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		System.out.println(admin);
+		MedicalOffice.addAdmin(admin);
+		
 		System.out.println("First Name: " + admin.getFirstName());
 		System.out.println("Last Name: " + admin.getLastName());
 		System.out.println("Date of Birth: " + admin.getDateOfBirth());
+		
+		System.out.println(MedicalOffice.showAdmin());
 		return "Admin";
 	}
 }

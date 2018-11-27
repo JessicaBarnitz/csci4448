@@ -36,6 +36,10 @@
 					<td><form:input path="dateOfBirth" /></td>
 				</tr>
 				<tr>
+					<td>Job Title:</td>
+					<td><form:input path="jobTitle" /></td>
+				</tr>
+				<tr>
 					<td>Username:</td>
 					<td><form:input path="username" /></td>
 				</tr>

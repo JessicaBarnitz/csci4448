@@ -127,7 +127,36 @@ public class Appointment {
     public void setPatient(Patient _patient) {
         this.patient = _patient;
     }
-
+    /**
+     * Generates a string list of the health care providers with their first and last name 
+     * @return a string of healthcare providers associated with the medical office
+     */
+    public List<String> getAllHealthcareProviders(){
+	    List<String> healthcareProviders = new ArrayList<String>();
+		ListIterator<HealthcareProvider> iterator = MedicalOffice.getHealthcareProviderList().listIterator();
+		while(iterator.hasNext()) {
+			HealthcareProvider i = iterator.next();
+			healthcareProviders.add("Dr. " + i.getFirstName() + " " + i.getLastName());
+		}
+		return healthcareProviders;
+    }
+    /**
+     * Generates a generic string list of the available appointment times
+     * @return a string of healthcare providers associated with the medical office
+     */
+    public List<String> getAllAppointmentTimes(){
+    	List<String> timesList = new ArrayList<String>();
+		timesList.add("08:00-09:00");
+		timesList.add("09:00-10:00");
+		timesList.add("10:00-11:00");
+		timesList.add("11:00-12:00");
+		timesList.add("  ---  ");
+		timesList.add("13:00-14:00");
+		timesList.add("14:00-15:00");
+		timesList.add("15:00-16:00");
+		timesList.add("16:00-17:00");
+		return timesList;
+    }
     /**
      * @param Patient _patient 
      * @param Date _datetime 

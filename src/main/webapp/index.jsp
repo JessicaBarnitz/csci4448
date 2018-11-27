@@ -19,8 +19,10 @@
 			CSCI 4448 Object Orientated Analysis and Design
 			</strong>
 		</p>
-		
-		<p style="color:darkSlateGray;padding:30px;">
+		<p style="color:darkSlateGray;font-size:25;">
+			<strong>Jessica Barnitz</strong>
+		</p>
+		<p style="color:darkSlateGray;">
 			<strong>Description:</strong> A healthcare portal for a medical office that schedules upcoming and previous patient appointments 
 			and securely maintains the patient's health record. 
 			<br/>
@@ -35,7 +37,7 @@
 			when healthcare providers refer patients to outside healthcare providers, they can share the patient's medical information for 
 			continuum of care, with patient consent. 
 		<p>
-		<button style="color:mediumSeaGreen;" type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medicalOffice'">BEGIN</button>
+		<button style="color:mediumSeaGreen;" type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/healthcarePortal'">BEGIN</button>
 		
 	</div>
 	<img alt="logo" src="images/logo.png">

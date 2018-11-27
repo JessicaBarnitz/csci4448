@@ -23,21 +23,12 @@
 			<strong>Address:</strong> ${medicalOffice.showAddress()}
 		</p>
 		<p style="white-space:pre-line;">
-			<strong>${medicalOffice.getName()} has these healthcare providers:</strong>
+			<strong>${medicalOffice.getName()} has these Healthcare Providers:</strong>
 			${medicalOffice.showHealthcareProviders()}
 		</p>
-		<p style="white-space:pre-line;">
-			<strong>${medicalOffice.getName()} has the following admin: </strong>
-			${medicalOffice.showAdmin()}
-		</p>
-		<p style="white-space:pre-line;">
-			<strong>${medicalOffice.getName()} has the following patients: </strong>
-			${medicalOffice.showPatients()}
-		</p>
-		<p style="color:mediumSeaGreen;font-size:35;"><strong>Signup as a:</strong></p>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newProvider'">HEALTHCARE PROVIDER</button>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newAdmin'">ADMIN</button>
-		
+		<p style="color:mediumSeaGreen;font-size:35;"><strong>Click for access:</strong></p>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newPatient'">PATIENT PORTAL</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medicalOffice'">MEDICAL OFFICE PORTAL</button>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>

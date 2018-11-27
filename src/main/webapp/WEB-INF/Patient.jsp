@@ -23,7 +23,8 @@
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/appointment'">Appointments</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/schedule'">Schedule Appointment</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/cancel'">Cancel Appointment</button>
-	
+		<p></p>
+		<button style="color:mediumSeaGreen;" type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/HealthcarePortal'">Exit</button>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>

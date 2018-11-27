@@ -83,6 +83,7 @@ public class Address {
     }
     /**
      * formats the address as a comma separated string
+     * 
      * @return this.street + ", " + this.city + ", " + this.county + ", " + this.state + ", " + this.zipcode
      */
     public String showAddress() {

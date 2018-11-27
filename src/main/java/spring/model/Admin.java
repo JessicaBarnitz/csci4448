@@ -3,6 +3,10 @@ package spring.model;
 import java.util.*;
 
 /**
+ * Admin class that serves as the central unit for the patient
+ * 
+ * @author Jessica Barnitz
+ * @version 1.0
  * 
  */
 public class Admin extends User {
@@ -22,12 +26,12 @@ public class Admin extends User {
     }
     /**
      * Overloaded constructor
-     * @param String _username
-     * @param String _password
-     * @param String _firstName
-     * @param String _lastName
-     * @param Date _dateOfBirth
-     * @param String _jobTitle
+     * @param _username user provided String username
+     * @param _password user provided String password
+     * @param _firstName user provided String first name
+     * @param _lastName user provided String last name
+     * @param _dateOfBirth user provided Date date of birth in form (mm/dd/yyyy)
+     * @param _jobTitle user provided String job title
      */
     public Admin(String _username, String _password, String _firstName, String _lastName, Date _dateOfBirth, String _jobTitle){
     	this.user = "patient";
@@ -39,6 +43,7 @@ public class Admin extends User {
         this.jobTitle = _jobTitle;
     }
     /**
+    * getter for the type of user
     * @return this.user
     */
     public String getUser() {
@@ -46,7 +51,7 @@ public class Admin extends User {
     }
     /**
      * setter
-     * @param String _jobTitle
+     * @param _jobTitle user provided String job title
      */
      public void setJobTitle(String _jobTitle) {
    	  this.jobTitle = _jobTitle;
@@ -58,13 +63,14 @@ public class Admin extends User {
       public String getJobTitle() {
           return this.jobTitle;
       }
-    /**
-     * login ensures that the username and password are correct
-     * @param String _username
-     * @param String _password
-     * @return this on success
-     * @return null on failure
-     */
+      /**
+       * login ensures that the username and password are correct
+       * 
+       * @param _username user provided String username
+       * @param _password userprovided String password
+       * @return this on success
+       * @return null on failure
+       */
    public Admin login(String _username, String _password) {
        if( (this.username == _username) && (this.password == _password) ) {
     	   return this;

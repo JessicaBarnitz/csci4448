@@ -25,7 +25,7 @@
 			<strong>Healthcare Portal</strong>
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Schedule Appointment</strong></p>
-		<form:form action="appointment" method="post" modelAttribute="appointmentForm">
+		<form:form action="appointment" method="post" modelAttribute="appointment">
 			<table border="0">
 			<!-- Appointment.java
 					this.datetime = _datetime;

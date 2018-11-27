@@ -26,9 +26,6 @@ public class ProviderController {
 	@GetMapping("/newProvider")
 	public String provider(ModelMap model)
 	{
-		model.addAttribute("firstName", "providerName");  //default attributes
-		model.addAttribute("user", "provider"); //default attributes
-		
 		HealthcareProvider provider = new HealthcareProvider();
 		model.put("provider", provider);
 		return "welcomeProvider";
@@ -36,7 +33,6 @@ public class ProviderController {
 	
 	@PostMapping("/provider")
 	public String viewPatient(@ModelAttribute("provider") HealthcareProvider provider) {
-//		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		System.out.println(provider);
 		MedicalOffice.addHealthcareProvider(provider);
 		
@@ -48,8 +44,4 @@ public class ProviderController {
 		return "Provider";
 	}
 	
-	@RequestMapping("/redirect")
-	public String redirect(Model model, HttpSession session) {
-		return "redirect:/medicalOffice";
-	}
 }

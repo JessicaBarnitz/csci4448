@@ -3,6 +3,10 @@ package spring.model;
 import java.util.*;
 
 /**
+ * Default User class that subclasses inherit from 
+ * 
+ * @author Jessica Barnitz
+ * @version 1.0
  * 
  */
 public class User {
@@ -44,11 +48,11 @@ public class User {
 
     /**
      * Overloaded constructor
-     * @param String _username
-     * @param String _password
-     * @param String _firstName
-     * @param String _lastName
-     * @param Date _dateOfBirth
+     * @param _username user provided String username
+     * @param _password user provided String password
+     * @param _firstName user provided String first name
+     * @param _lastName user provided String last name
+     * @param _dateOfBirth user provided Date date of birth in form (mm/dd/yyyy)
      */
     public User(String _username, String _password, String _firstName, String _lastName, Date _dateOfBirth){
         this.username = _username; 
@@ -57,7 +61,6 @@ public class User {
         this.lastName = _lastName;
         this.dateOfBirth = _dateOfBirth;
     }
-
     /**
     * getter
     * @return this.username
@@ -67,7 +70,7 @@ public class User {
     }
     /**
     * setter
-    * @param String _username
+    * @param _username user provided String username
     */
     public void setUsername(String _username) {
         this.username = _username;
@@ -81,7 +84,7 @@ public class User {
     }
     /**
     * setter
-    * @param String _password
+    * @param _password user provided String password
     */
     public void setPassword(String _password) {
         this.password = _password;
@@ -95,7 +98,7 @@ public class User {
     }
     /**
     * setter
-    * @param String _firstName
+    * @param _firstName user provided String first name
     */
     public void setFirstName(String _firstName) {
         this.firstName = _firstName;
@@ -109,7 +112,7 @@ public class User {
     }
     /**
     * setter
-    * @param String _lastName
+    * @param _lastName user provided String last name
     */
     public void setLastName(String _lastName) {
         this.lastName = _lastName;
@@ -123,15 +126,18 @@ public class User {
     }
     /**
     * setter
-    * @param Date _dateOfBirth
+    * @param _dateOfBirth user provided Date date of birth in form (mm/dd/yyyy)
     */
     public void setDateOfBirth(Date _dateOfBirth) {
         this.dateOfBirth = _dateOfBirth;
     }
-   /**
-    * @param String _username
-    * @param String _password
-    */
+    /**
+     * login ensures that the username and password are correct
+     * 
+     * @param _username user provided String username
+     * @param _password userprovided String password
+     * @return this 
+     */
    public User login(String _username, String _password) {
 	   return this;
    }
