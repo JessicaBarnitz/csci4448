@@ -24,8 +24,8 @@ import org.springframework.validation.BindingResult;
 @RequestMapping(value="/")
 public class PatientController {
 	
-	@GetMapping("/patient")
-	public String patient(ModelMap model)
+	@GetMapping("/newPatient")
+	public String newPatient(ModelMap model)
 	{
 		model.addAttribute("firstName", "patientName"); //default attributes
 		model.addAttribute("user", "patient"); //default attributes
@@ -50,6 +50,18 @@ public class PatientController {
 //		
 //		return "ScheduleAppointmentSuccess";
 //	}
+	@GetMapping("/patient")
+	public String patient(@ModelAttribute("patient") Patient patient) {
+		System.out.println(patient);
+		CurrentPatient.patient = patient;
+		
+		System.out.println("First Name: " + patient.getFirstName());
+		System.out.println("Last Name: " + patient.getLastName());
+		System.out.println("Date of Birth: " + patient.getDateOfBirth());
+		System.out.println("patient ID: " + patient.getPatientID());
+		
+		return "Patient";
+	}
 	
 	@PostMapping("/patient")
 	public String viewPatient(@ModelAttribute("patient") Patient patient) {
@@ -63,5 +75,13 @@ public class PatientController {
 		System.out.println("patient ID: " + patient.getPatientID());
 		
 		return "Patient";
+	}
+	
+	@GetMapping(value="/appointment")
+	public String viewAppointment(Map<String, Object> model) {
+		model.put("appointments", CurrentPatient.patient.showAppointments());
+		model.put("patient", CurrentPatient.patient);
+		
+		return "Appointment";
 	}
 }

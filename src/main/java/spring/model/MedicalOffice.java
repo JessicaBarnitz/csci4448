@@ -302,4 +302,19 @@ public class MedicalOffice {
 	   }
 	   return null;
    }
+	/**
+	 * iterates through the health care providers list to find the provider
+	 * @param _lastName healthcare providers last name
+	 * @return provider 
+	 */
+  public static HealthcareProvider findHealthcareProvider(String _lastName) {
+	   ListIterator<HealthcareProvider> iterator = healthcareProviderList.listIterator();
+	   while(iterator.hasNext()) {
+		   HealthcareProvider provider = iterator.next();
+		   if (provider.getLastName() == _lastName) {
+			   return provider;
+		   }
+	   }
+	   return null;
+  }
 }

@@ -24,14 +24,14 @@
 		<h2 style="color:mediumSeaGreen;font-size:60">
 			<strong>Healthcare Portal</strong>
 		</h2>
-		<p style="color:mediumSeaGreen;font-size:35"><strong>Cancel Appointment</strong></p>
-		<form:form action="appointment" method="post" modelAttribute="appointment">
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Schedule Appointment</strong></p>
+		<form:form action="cancel" method="post" modelAttribute="appointment">
 			<table border="0">
 			<!-- Appointment.java
 					this.datetime = _datetime;
         			this.reason = _reason;
         			this.healthcareProvider = _healthcareProvider;
-	       			this.patient = _patient;-->	
+        			this.patient = _patient;-->	
 				<!-- check date and time -->
 				<tr> 
 					<td>Date:</td>
@@ -42,8 +42,12 @@
 					<td><form:select path="time" items="${timesList}" /></td>
 				</tr>
 				<tr>
+					<td>Reason for Canceling?</td>
+					<td><form:input path="reason" /></td>
+				</tr>
+				<tr>
 					<td>Healthcare Provider Specific:</td>
-					<td><form:select path="healthcareProvider" items="${healthcareProviderList}" /></td>
+					<td><form:select path="healthcareProviderStr" items="${healthcareProviderList}" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input style="color:mediumSeaGreen" type="submit" value="Submit" /></td>

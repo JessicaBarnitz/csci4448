@@ -29,6 +29,7 @@ public class Patient extends User{
     	this.user = "patient";
     	this.patientID = MedicalOffice.getCurrentPatientID();
     	MedicalOffice.getNextPatientID();
+    	this.appointments = new ArrayList<Appointment>();
     }
     /**
      * Overloaded constructor
@@ -84,6 +85,33 @@ public class Patient extends User{
     public void addAppointment(Appointment _appointment) {
         this.appointments.add(_appointment);
     }
+    /**
+     * returns a string of all the patients upcoming and previous appointments
+     * @return concatenated string on the patients upcoming and previous appointments
+     */
+    public String showAppointments() {
+ 	   ListIterator<Appointment> iterator = appointments.listIterator();
+ 	   String appointments = "";
+ 	   while(iterator.hasNext()) {
+ 		   Appointment i = iterator.next();
+ 		   appointments += i.getDate() + ", " + i.getTime() + ", for " +  i.getReason() + " with Dr. " + i.getHealthcareProviderStr() + "\n";
+ 	   }
+ 	   return appointments;
+    }
+    /**
+     * cancels an upcoming patients appointment
+     * @param _date the date of the appointment
+     * @param _time the time of the appointment
+     */
+    public void cancelAppointment(Date _date, String _time) {
+  	   ListIterator<Appointment> iterator = appointments.listIterator();
+  	   while(iterator.hasNext()) {
+  		   Appointment i = iterator.next();
+  		   if ((i.getDate().equals(_date)) && (i.getTime().equals(_time)) ) {
+  			   appointments.remove(i);
+  		   }
+  	   }
+     }
     /**
      * login ensures that the username and password are correct
      * 

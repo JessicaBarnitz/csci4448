@@ -13,28 +13,17 @@
 		<h2 style="color:mediumSeaGreen;font-size:60">
 			<strong>Healthcare Portal</strong>
 		</h2>
-		<p style="color:mediumSeaGreen;font-size:35"><strong>Appointment</strong></p>
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Appointments</strong></p>
 		<form:form action="appointment" method="post" commandName="appointment">
 			<table border="0">
-			<!-- Appointment.java
-					this.datetime = _datetime;
-        			this.reason = _reason;
-//        			this.healthcareProvider = _healthcareProvider;
-//        			this.patient = _patient;-->	
-				<!-- check date and time -->
-				<tr> 
-					<td>Date and Time (mm/dd/yyyy):</td>
-					<td><form:input path="datetime" /></td>
-				</tr>
-				<tr>
-					<td>Reason for Visit:</td>
-					<td><form:input path="reason" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit" value="Submit" /></td>
-				</tr>
+			<p style="white-space:pre-line;">
+			<strong>${patient.getFirstName()} has the following appointments:</strong>
+				${patient.showAppointments()}
+			</p>
 			</table>
 		</form:form>
+		<p></p>
+		<button style="color:mediumSeaGreen;" type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/patient'">Back</button>
 	</div>
 	<img alt="logo" src="images/logo.png">
 </body>

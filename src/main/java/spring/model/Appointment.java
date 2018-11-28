@@ -7,29 +7,28 @@ import java.util.*;
  * 
  */
 public class Appointment {
-
     /**
-     * 
+     * Date of the appointment
      */
     private Date date;
     /**
-     * 
+     * Time of the appointment
      */
     private String time;
     /**
-     * 
+     * Reason for the appointment
      */
     private String reason;
     /**
-     * 
+     * String of the Healthcare provider last name 
      */
     private String healthcareProviderStr;
     /**
-     * 
+     * Healthcare provider object
      */
     private HealthcareProvider healthcareProvider;
     /**
-     * 
+     * Patient object
      */
     private Patient patient;
     /**
@@ -45,108 +44,114 @@ public class Appointment {
     }
 
     /**
-     * @param _date
-     * @param _time
-     * @param _reason 
-     * @param _healthcareProvider 
-     * @param _patient
+     * @param _date Date of the appointment
+     * @param _time Time of the appointment
+     * @param _reason Reason for the appointment
+     * @param _healthcareProviderStr last name
+     * @param _patient patient object
      */
-    public Appointment(Date _date, String _time, String _reason, HealthcareProvider _healthcareProvider, Patient _patient) {
+    public Appointment(Date _date, String _time, String _reason, String _healthcareProviderStr, Patient _patient) {
         this.date = _date;
         this.time = _time;
         this.reason = _reason;
-        this.healthcareProvider = _healthcareProvider;
+        this.healthcareProviderStr = _healthcareProviderStr;
         this.patient = _patient;
     }
 
     /**
-     * @return
+     * getter
+     * @return this.date
      */
     public Date getDate() {
         return this.date;
     }
 
     /**
-     * @param Date _date 
-     * @return
+     * setter
+     * @param _date of the appointment
      */
     public void setDate(Date _date) {
         this.date = _date;
     }
     /**
-     * @return
+     * getter
+     * @return this.time
      */
     public String getTime() {
         return this.time;
     }
 
     /**
-     * @param String _time 
-     * @return
+     * setter
+     * @param _time of the appointment
      */
     public void setTime(String _time) {
         this.time = _time;
     }
 
     /**
-     * @return
+     * getter
+     * @return this.reason
      */
     public String getReason() {
         return this.reason;
     }
 
     /**
-     * @param String _reason 
-     * @return
+     * setter
+     * @param _reason Reason for the appointment
      */
     public void setReason(String _reason) {
         this.reason = _reason;
     }
 
     /**
-     * @return
+     * getter
+     * @return this.healthcareProvider
      */
     public HealthcareProvider getHealthcareProvider() {
         return this.healthcareProvider;
     }
 
     /**
-     * @param HealthcareProvider _healthcareProvider 
-     * @return
+     * setter
+     * @param _healthcareProvider HealthcareProvider object
      */
     public void setHealthcareProvider(HealthcareProvider _healthcareProvider) {
         this.healthcareProvider = _healthcareProvider;
     }
     /**
-     * @return
+     * getter
+     * @return this.healthcareProviderStr
      */
     public String getHealthcareProviderStr() {
         return this.healthcareProviderStr;
     }
 
     /**
-     * @param HealthcareProvider _healthcareProvider 
-     * @return
+     * setter
+     * @param _healthcareProviderStr healthcare provider last name
      */
     public void setHealthcareProviderStr(String _healthcareProviderStr) {
         this.healthcareProviderStr = _healthcareProviderStr;
     }
     /**
-     * @return
+     * getter
+     * @return this.patient
      */
     public Patient getPatient() {
         return this.patient;
     }
 
     /**
-     * @param Patient _patient 
-     * @return
+     * setter
+     * @param _patient patient object
      */
     public void setPatient(Patient _patient) {
         this.patient = _patient;
     }
     /**
-     * Generates a string list of the health care providers with their first and last name 
+     * Generates a string list of the health care providers with their last name 
      * @return a string of healthcare providers associated with the medical office
      */
     public List<String> getAllHealthcareProviders(){
@@ -154,7 +159,7 @@ public class Appointment {
 		ListIterator<HealthcareProvider> iterator = MedicalOffice.getHealthcareProviderList().listIterator();
 		while(iterator.hasNext()) {
 			HealthcareProvider i = iterator.next();
-			healthcareProviders.add("Dr. " + i.getFirstName() + " " + i.getLastName());
+			healthcareProviders.add( i.getLastName());
 		}
 		return healthcareProviders;
     }
@@ -174,38 +179,6 @@ public class Appointment {
 		timesList.add("15:00-16:00");
 		timesList.add("16:00-17:00");
 		return timesList;
-    }
-    /**
-     * @param Patient _patient 
-     * @param Date _datetime 
-     * @param String _reason 
-     * @return
-     */
-    public boolean scheduleAppointment(Patient _patient, Date _date, String _time, String _reason) {
-        System.out.println("Schedule appointment from java");
-        return false;
-    }
-
-    /**
-     * @param Patient _patient 
-     * @param Date _datetime 
-     * @param String _reason 
-     * @return
-     */
-    public boolean cancelAppointment(Patient _patient, Date _date, String _time) {
-    	System.out.println("cancel appointment from java");
-        return false;
-    }
-
-    /**
-     * @param Patient _patient 
-     * @param Date_ datetime 
-     * @param String _reason 
-     * @param HealthcareProvider healthcareProvider 
-     * @return
-     */
-    public void patientAppointment(Patient _patient, Date _datetime, String _reason, HealthcareProvider healthcareProvider) {
-        // TODO implement here
     }
 
 }
