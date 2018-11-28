@@ -9,7 +9,7 @@ import java.util.*;
  * @version 1.0
  * 
  */
-public class Admin extends User {
+public class Admin extends User implements Observer {
 	/**
      * A string describing the type of user
      */
@@ -18,11 +18,16 @@ public class Admin extends User {
      * A string describing the admin jobTitle
      */
 	private String jobTitle;
+	/**
+     * A string for updated information from the observer
+     */
+	private String state;
     /**
      * Default constructor
      */
     public Admin() {
     	this.user = "admin";
+    	this.state = "";
     }
     /**
      * Overloaded constructor
@@ -41,6 +46,7 @@ public class Admin extends User {
         this.lastName = _lastName;
         this.dateOfBirth = _dateOfBirth;
         this.jobTitle = _jobTitle;
+        this.state = "";
     }
     /**
     * getter for the type of user
@@ -64,6 +70,20 @@ public class Admin extends User {
           return this.jobTitle;
       }
       /**
+       * setter
+       * @param _state update the observer state
+       */
+       public void setState(String _state) {
+     	  this.state = _state;
+       }
+       /**
+        * getter
+        * @return this.state
+        */
+        public String getState() {
+            return this.state;
+        }
+      /**
        * login ensures that the username and password are correct
        * 
        * @param _username user provided String username
@@ -79,5 +99,12 @@ public class Admin extends User {
     	   return null;
        }
    }
+   
+	@Override
+	public void update(String _update) {
+		System.out.println(_update);
+		setState(_update);
+		System.out.println(getState());
+	}
 
 }

@@ -131,6 +131,7 @@ public class User {
     public void setDateOfBirth(Date _dateOfBirth) {
         this.dateOfBirth = _dateOfBirth;
     }
+    
     /**
      * login ensures that the username and password are correct
      * 

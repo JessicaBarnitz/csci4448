@@ -14,6 +14,7 @@
 			<strong>Healthcare Portal</strong>
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Billing Information</strong></p>
+		For patient ${patient.getFirstName()} ${patient.getLastName()}
 		<form:form action="billing" method="post" modelAttribute="billingInformationForm">
 			<table border="0">
 			<!-- BillingInformation.java

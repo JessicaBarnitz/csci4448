@@ -180,5 +180,4 @@ public class Appointment {
 		timesList.add("16:00-17:00");
 		return timesList;
     }
-
 }

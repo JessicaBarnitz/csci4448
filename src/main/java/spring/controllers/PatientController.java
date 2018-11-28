@@ -1,10 +1,15 @@
 package spring.controllers;
 
+import spring.model.Address;
+import spring.model.Admin;
 import spring.model.Appointment;
 import spring.model.CurrentPatient;
+import spring.model.CurrentUser;
+import spring.model.HealthcareProvider;
 import spring.model.MedicalOffice;
 import spring.model.Patient;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -32,34 +37,23 @@ public class PatientController {
 		
 		Patient patient = new Patient();
 		model.put("patient", patient);
-//		model.put("healthcareProviderList", MedicalOffice.getAllHealthcareProviders());
 		return "welcomePatient";
 	}
 	
-//	@RequestMapping(value = "/schedule", method = RequestMethod.POST)
-//	public String processScheduleAppointment(@ModelAttribute("appointment") Appointment appoint, BindingResult bindingResult, Map<String, Object> model) {
-//		//implement logic
-//		
-//		//testing purposes
-//		System.out.println("appointment post:" + model);
-//		System.out.println("Appointment time: " + appoint.getTime());
-//		System.out.println("Appointment day: " + appoint.getDate());
-//		System.out.println("Appointment reason: " + appoint.getReason());
-//		System.out.println("Appointment hcp: " + appoint.getHealthcareProviderStr());
-//		System.out.println("Appointment patient: " + appoint.getPatient());
-//		
-//		return "ScheduleAppointmentSuccess";
-//	}
 	@GetMapping("/patient")
 	public String patient(@ModelAttribute("patient") Patient patient) {
 		System.out.println(patient);
 		CurrentPatient.patient = patient;
+		CurrentUser.userPage = "Patient";
 		
 		System.out.println("First Name: " + patient.getFirstName());
 		System.out.println("Last Name: " + patient.getLastName());
 		System.out.println("Date of Birth: " + patient.getDateOfBirth());
 		System.out.println("patient ID: " + patient.getPatientID());
 		
+		//observer design pattern - notify observers of change
+		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());
+		medicalOffice.setState("********Observer Update********\nNew patient added to the Healthcare Portal: " + patient.getFirstName() + " " + patient.getLastName() + ", id: " + patient.getPatientID());
 		return "Patient";
 	}
 	
@@ -68,20 +62,17 @@ public class PatientController {
 		System.out.println(patient);
 		MedicalOffice.addPatient(patient);
 		CurrentPatient.patient = patient;
+		CurrentUser.userPage = "Patient";
 		
 		System.out.println("First Name: " + patient.getFirstName());
 		System.out.println("Last Name: " + patient.getLastName());
 		System.out.println("Date of Birth: " + patient.getDateOfBirth());
 		System.out.println("patient ID: " + patient.getPatientID());
 		
-		return "Patient";
-	}
-	
-	@GetMapping(value="/appointment")
-	public String viewAppointment(Map<String, Object> model) {
-		model.put("appointments", CurrentPatient.patient.showAppointments());
-		model.put("patient", CurrentPatient.patient);
+		//observer design pattern - notify observers of change
+		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());
+		medicalOffice.setState("********Observer Update********\nNew patient added to the Healthcare Portal: " + patient.getFirstName() + " " + patient.getLastName() + ", id: " + patient.getPatientID());
 		
-		return "Appointment";
+		return "Patient";
 	}
 }

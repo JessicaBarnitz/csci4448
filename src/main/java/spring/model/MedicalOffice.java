@@ -2,6 +2,8 @@ package spring.model;
 
 import java.util.*;
 
+import spring.model.Observer;
+
 /**
  * Medical office class that serves as the central unit for the healthcare portal
  * and keeps track of the healthcare providers, admin and patients for the medical
@@ -11,7 +13,7 @@ import java.util.*;
  * @version 1.0
  * 
  */
-public class MedicalOffice {
+public class MedicalOffice extends Observable{
 	/**
      * static instance of the medical office (makes use of singleton design pattern)
      */
@@ -33,6 +35,10 @@ public class MedicalOffice {
      */
     private String website;
     /**
+     * static int for assigning a patient id for the medical office
+     */
+    private static int nextPatientID;
+    /**
      * static list of the healthcare providers associated with this medical office
      */
     private static List<HealthcareProvider> healthcareProviderList;
@@ -44,14 +50,36 @@ public class MedicalOffice {
      * static list of the patients associated with this medical office
      */
     private static List<Patient> patientList;
+    //medical office is the subject
     /**
-     * static int for assigning a patient id for the medical office
+     * list of observers to be notified of change
      */
-    private static int nextPatientID;
+    private List<Observer> observersList = new ArrayList<Observer>();
     /**
-     * medical office calender
+     * state that changed
      */
-    private MedicalOfficeSchedule calender;
+    private String state;
+
+    public String getState() {
+        return state;
+     }
+
+     public void setState(String _state) {
+        this.state = _state;
+        notifyAllObservers(_state);
+     }
+
+     public void addObserver(Admin observer){
+        observersList.add(observer);
+        System.out.println("Admin observer added" + observer);
+     }
+
+     public void notifyAllObservers(String _state){
+        for (Observer observer : observersList) {
+           System.out.println("Updating observer " + observer + " with "+ _state);
+           observer.update(_state);
+        }
+     }
     /**
      * Default constructor
      */
@@ -60,10 +88,10 @@ public class MedicalOffice {
         this.address = new Address();
         this.phone = "";
         this.website = "";
+        nextPatientID = 0;
         healthcareProviderList = new ArrayList<HealthcareProvider>();
         adminList = new ArrayList<Admin>();
-        patientList = new ArrayList<Patient>();
-        nextPatientID = 0;
+        patientList = new ArrayList<Patient>();  
     }
     /**
      * Overloaded constructor
@@ -81,10 +109,11 @@ public class MedicalOffice {
         this.address = _address;
         this.phone = _phone;
         this.website = _website;
+        nextPatientID = 0;
         healthcareProviderList = _heathcareProviderList;
         adminList = _adminList;
         patientList = _patientList;
-        nextPatientID = 0;
+       
     }
     /**
      * implementation of the singleton design pattern to ensure only one instance of the 
@@ -163,6 +192,7 @@ public class MedicalOffice {
     public void setPatientList(List<Patient> _patientList) {
         patientList = _patientList;
     }
+ 
     /**
      * Increment the static patientID variable to ensure unique patient identifiers when instantiating a new patient
      * @return nextPatientID
@@ -185,13 +215,6 @@ public class MedicalOffice {
      */
     public static void setCurrentPatientID(int _pid) {
     	nextPatientID = _pid;
-    }
-    public MedicalOfficeSchedule getCalender() {
-        return this.calender;
-    }
-
-    public void setCalender(MedicalOfficeSchedule _calender) {
-        this.calender = _calender;
     }
    /**
     * add healthcare provider to the healthcare provider list
@@ -268,16 +291,13 @@ public class MedicalOffice {
 	   }
 	   return p;
    }
-	public static MedicalOffice createMedicalOffice() {
-	return new MedicalOffice();
-}
 	/**
 	 * iterates through the providers patient list to find the patient
 	 * @param _firstName patients first name
 	 * @param _lastName patients last name
 	 * @return patient 
 	 */
-   public Patient findPatient(String _firstName, String _lastName) {
+   public static Patient findPatient(String _firstName, String _lastName) {
 	   ListIterator<Patient> iterator = patientList.listIterator();
 	   while(iterator.hasNext()) {
 		   Patient patient = iterator.next();
@@ -292,10 +312,11 @@ public class MedicalOffice {
 	 * @param _patientID the patient's id
 	 * @return patient 
 	 */
-   public Patient findPatient(int _patientID) {
+   public static Patient findPatient(int _patientID) {
 	   ListIterator<Patient> iterator = patientList.listIterator();
 	   while(iterator.hasNext()) {
 		   Patient patient = iterator.next();
+		   System.out.println(patient.getPatientID() + " " + _patientID);
 		   if (patient.getPatientID() == _patientID) {
 			   return patient;
 		   }

@@ -6,9 +6,14 @@ import spring.model.Admin;
 import spring.model.BillingInformation;
 import spring.model.CurrentAdmin;
 import spring.model.CurrentPatient;
+import spring.model.CurrentProvider;
+import spring.model.CurrentUser;
+import spring.model.HealthcareProvider;
 import spring.model.MedicalOffice;
 import spring.model.Patient;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -35,6 +40,8 @@ public class AdminController {
 	public String admin(ModelMap model, HttpSession session)
 	{
 		Admin admin = new Admin();
+		CurrentProvider.provider = null;
+		CurrentPatient.patient = null;
 		model.put("admin", admin);
 		return "welcomeAdmin";
 	}
@@ -42,8 +49,11 @@ public class AdminController {
 	@PostMapping("/admin")
 	public String viewPatient(@ModelAttribute("admin") Admin admin, ModelMap model, HttpSession session) {
 		System.out.println(admin);
-		MedicalOffice.addAdmin(admin);
+		//observer design pattern - notify observers of change
+		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());		
+		medicalOffice.addObserver(admin);
 		CurrentAdmin.admin = admin;
+		CurrentUser.userPage = "Admin";
 		
 		System.out.println("First Name: " + admin.getFirstName());
 		System.out.println("Last Name: " + admin.getLastName());
@@ -70,8 +80,42 @@ public class AdminController {
 		System.out.println("Last Name: " + patient.getLastName());
 		System.out.println("Date of Birth: " + patient.getDateOfBirth());
 		System.out.println("patient ID: " + patient.getPatientID());
+		
+		//observer design pattern - notify observers of change
+		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());
+		medicalOffice.setState("********Observer Update********\nNew patient added to the Healthcare Portal: " + patient.getFirstName() + " " + patient.getLastName() + ", id: " + patient.getPatientID());
+						
 		model.put("admin", CurrentAdmin.admin);
 		
-		return "Admin";
+		return CurrentUser.userPage;
 	}
+	
+//	@GetMapping("/adminSearchPatient")
+//	public String searchPatient(ModelMap model)
+//	{
+//		Patient searchPatient = new Patient();
+//		model.put("searchPatient", searchPatient);
+//		return "searchPatient";
+//	}
+//	
+//	@PostMapping("/adminSearchPatient")
+//	public String viewSearchPatient(@ModelAttribute("patient") Patient patient, BindingResult bindingResult, Map<String, Object> model) {
+//		System.out.println(patient);
+//		
+//		if (MedicalOffice.findPatient(patient.getFirstName(), patient.getLastName()) != null) {
+//			CurrentPatient.patient = MedicalOffice.findPatient(patient.getFirstName(), patient.getLastName());
+//		}
+//		else {
+//			CurrentPatient.patient = MedicalOffice.findPatient(patient.getPatientID());
+//		}
+//		System.out.println("First Name: " + CurrentPatient.patient.getFirstName());
+//		System.out.println("Last Name: " + CurrentPatient.patient.getLastName());
+//		System.out.println("Last Name: " + CurrentPatient.patient.getPatientID());
+//		
+//		model.put("patient", CurrentPatient.patient);
+//		model.put("admin", CurrentAdmin.admin);
+//		
+//		return "Admin";
+//	}
+	
 }

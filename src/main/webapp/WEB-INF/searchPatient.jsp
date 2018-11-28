@@ -15,16 +15,29 @@
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Search for Patient</strong></p>
 		<form:form action="searchPatient" method="post" modelAttribute="searchPatient">
-			<table border="0">
-			<!-- BillingInformation.java
-				    ;-->	
+			<table border="0">	
 				<tr>
 					<td>Patient First Name:</td>
-					<!--<td><form:input path="firstName" /></td> -->
+					<td><form:input path="firstName" /></td> 
 				</tr>
 				<tr>
 					<td>Patient Last Name:</td>
-					<!--<td><form:input path="lastName" /></td> -->
+					<td><form:input path="lastName" /></td>
+				</tr>
+				<tr>
+					<td style="margin: 10px; padding:5px"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input style="color:mediumSeaGreen" type="submit" value="Submit" /></td>
+				</tr>
+			</table>
+		</form:form>
+		<strong>OR</strong>
+		<form:form action="searchPatient" method="post" modelAttribute="searchPatient">
+			<table border="0">	
+				<tr>
+					<td>Patient ID:</td>
+					<td><form:input path="patientID" /></td> 
 				</tr>
 				<tr>
 					<td style="margin: 10px; padding:5px"></td>

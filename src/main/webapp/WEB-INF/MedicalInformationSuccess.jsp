@@ -13,7 +13,8 @@
 		<h2 style="color:mediumSeaGreen;font-size:60">
 			<strong>Healthcare Portal</strong>
 		</h2>
-		<p style="color:mediumSeaGreen;font-size:35"><strong>Medical Information</strong></p>
+		<p style="color:mediumSeaGreen;font-size:35"><strong>Medical Information Updated</strong></p>
+		For patient ${patient.getFirstName()} ${patient.getLastName()}
 		<form:form action="medical" method="post" commandName="medicalInformationForm">
 			<table border="0">
 			<!-- MedicalInformation.java
@@ -65,7 +66,7 @@
 				//window.location = "http://localhost:8080/SpringMVCTutorial/patient";//<-object is not stored
 				window.history.go(-2);
 			}
-			document.write("You will be redirected back to the patient portal in 5 seconds");
+			document.write("You will be redirected back to the home portal in 5 seconds");
 			setTimeout('Redirect()', 5000);
 		</script>
 	</div>

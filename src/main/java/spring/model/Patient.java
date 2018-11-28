@@ -2,6 +2,8 @@ package spring.model;
 
 import java.util.*;
 
+import spring.model.Observer;
+
 /**
  * Patient class that serves as the central unit for the patient
  * 
@@ -9,7 +11,7 @@ import java.util.*;
  * @version 1.0
  * 
  */
-public class Patient extends User{
+public class Patient extends User implements Observer{
 	/**
      * A string describing the type of user
      */
@@ -22,6 +24,18 @@ public class Patient extends User{
      * A list of this patients appointments
      */
 	private List<Appointment> appointments;
+	/**
+     * patient billing information
+     */
+	private BillingInformation billingInformation;
+	/**
+     * patient medical information
+     */
+	private MedicalInformation medicalInformation;
+	/**
+     * patient personal information
+     */
+	private PersonalInformation personalInformation;
 	/**
      * Default constructor
      */
@@ -72,6 +86,48 @@ public class Patient extends User{
         this.patientID = _patientID;
     }
     /**
+    * setter
+    * @param _billingInformation object 
+    */
+    public void setBillingInformation(BillingInformation _billingInformation) {
+        this.billingInformation = _billingInformation;
+    }
+    /**
+     * getter
+     * @return this.billingInformation
+     */
+    public BillingInformation getBillingInformation() {
+        return this.billingInformation;
+    }
+    /**
+    * setter
+    * @param _medicalInformation object 
+    */
+    public void setMedicalInformation(MedicalInformation _medicalInformation) {
+        this.medicalInformation = _medicalInformation;
+    }
+    /**
+     * getter
+     * @return this.medicalInformation
+     */
+    public MedicalInformation getMedicalInformation() {
+        return this.medicalInformation;
+    }
+    /**
+    * setter
+    * @param _personalInformation object 
+    */
+    public void setPersonalInformation(PersonalInformation _personalInformation) {
+        this.personalInformation = _personalInformation;
+    }
+    /**
+     * getter
+     * @return this.billingInformation
+     */
+    public PersonalInformation getPersonalInformation() {
+        return this.personalInformation;
+    }
+    /**
      * getter
      * @return _this.appointments
      */
@@ -108,7 +164,7 @@ public class Patient extends User{
   	   while(iterator.hasNext()) {
   		   Appointment i = iterator.next();
   		   if ((i.getDate().equals(_date)) && (i.getTime().equals(_time)) ) {
-  			   appointments.remove(i);
+  			   iterator.remove();
   		   }
   	   }
      }
@@ -128,5 +184,9 @@ public class Patient extends User{
     	   return null;
        }
    }
-
+	@Override
+	public void update(String _update) {
+		// TODO Auto-generated method stub
+		
+	}
 }

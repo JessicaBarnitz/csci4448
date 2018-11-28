@@ -14,6 +14,7 @@
 			<strong>Healthcare Portal</strong>
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Personal Information</strong></p>
+		For patient ${patient.getFirstName()} ${patient.getLastName()}
 		<form:form action="personal" method="post" commandName="personalInformationForm">
 			<table border="0">
 			<!-- PersonalInformation.java
