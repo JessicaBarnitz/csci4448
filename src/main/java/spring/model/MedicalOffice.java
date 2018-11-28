@@ -268,6 +268,9 @@ public class MedicalOffice {
 	   }
 	   return p;
    }
+	public static MedicalOffice createMedicalOffice() {
+	return new MedicalOffice();
+}
 	/**
 	 * iterates through the providers patient list to find the patient
 	 * @param _firstName patients first name

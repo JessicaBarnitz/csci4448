@@ -34,28 +34,31 @@ public class AppointmentController {
 	public String viewScheduleAppointment(Map<String, Object> model) {
 		System.out.println("schedule appointment");
 		Appointment appointment = new Appointment();
+		
 		model.put("appointment", appointment);
 		model.put("timesList", appointment.getAllAppointmentTimes());
 		model.put("healthcareProviderList", appointment.getAllHealthcareProviders());
 		model.put("patient", CurrentPatient.patient);
+		
 		System.out.println("in controller:" + CurrentPatient.patient);
+		
 		return "ScheduleAppointment";
 	}
 	
 	@RequestMapping(value = "/schedule", method = RequestMethod.POST)
-	public String processScheduleAppointment(@ModelAttribute("appointment") Appointment appoint, BindingResult bindingResult, Map<String, Object> model) {
+	public String processScheduleAppointment(@ModelAttribute("appointment") Appointment appointment, BindingResult bindingResult, Map<String, Object> model) {
 		//implement logic
-		appoint.setPatient(CurrentPatient.patient);
+		appointment.setPatient(CurrentPatient.patient);
 		//testing purposes
 		System.out.println("appointment post:" + model);
-		System.out.println("Appointment time: " + appoint.getTime());
-		System.out.println("Appointment day: " + appoint.getDate());
-		System.out.println("Appointment reason: " + appoint.getReason());
-		System.out.println("Appointment hcp: " + appoint.getHealthcareProviderStr());
-		System.out.println("Appointment patient: " + appoint.getPatient().getFirstName());
+		System.out.println("Appointment time: " + appointment.getTime());
+		System.out.println("Appointment day: " + appointment.getDate());
+		System.out.println("Appointment reason: " + appointment.getReason());
+		System.out.println("Appointment hcp: " + appointment.getHealthcareProviderStr());
+		System.out.println("Appointment patient: " + appointment.getPatient().getFirstName());
 		
 		model.put("patient", CurrentPatient.patient);
-		//return "ScheduleAppointmentSuccess";
+		
 		return "Patient";
 	}
 }

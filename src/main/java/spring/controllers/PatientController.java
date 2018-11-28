@@ -56,6 +56,7 @@ public class PatientController {
 		System.out.println(patient);
 		MedicalOffice.addPatient(patient);
 		CurrentPatient.patient = patient;
+		
 		System.out.println("First Name: " + patient.getFirstName());
 		System.out.println("Last Name: " + patient.getLastName());
 		System.out.println("Date of Birth: " + patient.getDateOfBirth());
