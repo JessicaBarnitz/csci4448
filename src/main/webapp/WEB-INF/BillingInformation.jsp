@@ -14,7 +14,7 @@
 			<strong>Healthcare Portal</strong>
 		</h2>
 		<p style="color:mediumSeaGreen;font-size:35"><strong>Billing Information</strong></p>
-		<form:form action="billing" method="post" commandName="billingInformationForm">
+		<form:form action="billing" method="post" modelAttribute="billingInformationForm">
 			<table border="0">
 			<!-- BillingInformation.java
 				    this.insurance = false;

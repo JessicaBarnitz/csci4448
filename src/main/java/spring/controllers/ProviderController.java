@@ -3,6 +3,7 @@ package spring.controllers;
 import spring.model.User;
 import spring.model.HealthcareProvider;
 import spring.model.MedicalOffice;
+import spring.model.Patient;
 
 import java.util.Date;
 import java.util.Map;
@@ -32,13 +33,30 @@ public class ProviderController {
 	}
 	
 	@PostMapping("/provider")
-	public String viewPatient(@ModelAttribute("provider") HealthcareProvider provider) {
+	public String viewProvider(@ModelAttribute("provider") HealthcareProvider provider) {
 		System.out.println(provider);
 		MedicalOffice.addHealthcareProvider(provider);
 		
 		System.out.println("First Name: " + provider.getFirstName());
 		System.out.println("Last Name: " + provider.getLastName());
 		System.out.println("Date of Birth: " + provider.getDateOfBirth());
+
+		System.out.println(MedicalOffice.showHealthcareProviders());
+		return "Provider";
+	}
+	
+	@GetMapping("/searchPatient")
+	public String searchPatient(ModelMap model) {
+		System.out.println(model);
+		System.out.println(MedicalOffice.showHealthcareProviders());
+		return "SearchPatient";
+	}
+	
+	@PostMapping("/searchPatient")
+	public String viewProvider(@ModelAttribute("searchPatient") Patient patient) {
+		System.out.println(patient);
+		
+		System.out.println("First Name: " + patient.getFirstName());
 
 		System.out.println(MedicalOffice.showHealthcareProviders());
 		return "Provider";

@@ -27,7 +27,7 @@
 			${medicalOffice.showHealthcareProviders()}
 		</p>
 		<p style="color:mediumSeaGreen;font-size:35;"><strong>Click for access:</strong></p>
-		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/newPatient'">PATIENT PORTAL</button>
+		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/patient'">PATIENT PORTAL</button>
 		<button type="button" onclick="location.href='http://localhost:8080/SpringMVCTutorial/medicalOffice'">MEDICAL OFFICE PORTAL</button>
 	</div>
 	<img alt="logo" src="images/logo.png">

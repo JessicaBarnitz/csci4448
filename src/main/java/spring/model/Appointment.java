@@ -23,6 +23,10 @@ public class Appointment {
     /**
      * 
      */
+    private String healthcareProviderStr;
+    /**
+     * 
+     */
     private HealthcareProvider healthcareProvider;
     /**
      * 
@@ -36,6 +40,7 @@ public class Appointment {
         this.time = "";
         this.reason = "";
         this.healthcareProvider = null;
+        this.healthcareProviderStr = "";
         this.patient = null;
     }
 
@@ -109,10 +114,23 @@ public class Appointment {
      * @param HealthcareProvider _healthcareProvider 
      * @return
      */
-    public void sethealthcareProvider(HealthcareProvider _healthcareProvider) {
+    public void setHealthcareProvider(HealthcareProvider _healthcareProvider) {
         this.healthcareProvider = _healthcareProvider;
     }
+    /**
+     * @return
+     */
+    public String getHealthcareProviderStr() {
+        return this.healthcareProviderStr;
+    }
 
+    /**
+     * @param HealthcareProvider _healthcareProvider 
+     * @return
+     */
+    public void setHealthcareProviderStr(String _healthcareProviderStr) {
+        this.healthcareProviderStr = _healthcareProviderStr;
+    }
     /**
      * @return
      */
@@ -164,7 +182,7 @@ public class Appointment {
      * @return
      */
     public boolean scheduleAppointment(Patient _patient, Date _date, String _time, String _reason) {
-        System.out.println("Schedule appointment");
+        System.out.println("Schedule appointment from java");
         return false;
     }
 
@@ -175,7 +193,7 @@ public class Appointment {
      * @return
      */
     public boolean cancelAppointment(Patient _patient, Date _date, String _time) {
-    	System.out.println("cancel appointment");
+    	System.out.println("cancel appointment from java");
         return false;
     }
 

@@ -92,6 +92,7 @@ public class HealthcareProvider extends User {
     public void addPatient(Patient _patient) {
         patientList.add(_patient);
     }
+
     /**
      * login ensures that the username and password are correct
      * 

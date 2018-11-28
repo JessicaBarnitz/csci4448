@@ -19,6 +19,10 @@ public class Patient extends User{
      */
 	private int patientID;
 	/**
+     * A list of this patients appointments
+     */
+	private List<Appointment> appointments;
+	/**
      * Default constructor
      */
     public Patient() {
@@ -34,7 +38,6 @@ public class Patient extends User{
      * @param _firstName user provided String first name
      * @param _lastName user provided String last name
      * @param _dateOfBirth user provided Date date of birth in form (mm/dd/yyyy)
-     * @param _patientID assigned patient id by MedicalOffice
      */
     public Patient(String _username, String _password, String _firstName, String _lastName, Date _dateOfBirth){
     	this.user = "patient";
@@ -44,7 +47,7 @@ public class Patient extends User{
         this.lastName = _lastName;
         this.dateOfBirth = _dateOfBirth;
         this.patientID = MedicalOffice.getNextPatientID();
-        System.out.println(_firstName + patientID);
+        this.appointments = new ArrayList<Appointment>();
     }
     /**
     * getter for the type of user
@@ -66,6 +69,20 @@ public class Patient extends User{
     */
     public void setPatientID(int _patientID) {
         this.patientID = _patientID;
+    }
+    /**
+     * getter
+     * @return _this.appointments
+     */
+    public List<Appointment> getAppointments() {
+        return this.appointments;
+    }
+    /**
+     * add an appointment to the patients appointments 
+     * @param _patient
+     */
+    public void addAppointment(Appointment _appointment) {
+        this.appointments.add(_appointment);
     }
     /**
      * login ensures that the username and password are correct

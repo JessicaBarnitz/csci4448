@@ -148,7 +148,7 @@ public class MedicalOffice {
         healthcareProviderList = _healthcareProviderList;
     }
 
-    public List<Admin> getAdminList() {
+    public static List<Admin> getAdminList() {
         return adminList;
     }
 
@@ -156,7 +156,7 @@ public class MedicalOffice {
         adminList = _adminList;
     }
 
-    public List<Patient> getPatientList() {
+    public static List<Patient> getPatientList() {
         return patientList;
     }
 
@@ -212,7 +212,6 @@ public class MedicalOffice {
    /**
     * add patient to the patient list
     * @param _patient
-    * @return
     */
    public static void addPatient(Patient _patient) {
        patientList.add(_patient);
@@ -269,5 +268,35 @@ public class MedicalOffice {
 	   }
 	   return p;
    }
-
+	/**
+	 * iterates through the providers patient list to find the patient
+	 * @param _firstName patients first name
+	 * @param _lastName patients last name
+	 * @return patient 
+	 */
+   public Patient findPatient(String _firstName, String _lastName) {
+	   ListIterator<Patient> iterator = patientList.listIterator();
+	   while(iterator.hasNext()) {
+		   Patient patient = iterator.next();
+		   if ( (patient.getFirstName() == _firstName) & (patient.getLastName() == _lastName) ){
+			   return patient;
+		   }
+	   }
+	   return null;
+   }
+	/**
+	 * iterates through the providers patient list to find the patient
+	 * @param _patientID the patient's id
+	 * @return patient 
+	 */
+   public Patient findPatient(int _patientID) {
+	   ListIterator<Patient> iterator = patientList.listIterator();
+	   while(iterator.hasNext()) {
+		   Patient patient = iterator.next();
+		   if (patient.getPatientID() == _patientID) {
+			   return patient;
+		   }
+	   }
+	   return null;
+   }
 }
