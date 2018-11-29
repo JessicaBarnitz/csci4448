@@ -1,0 +1,9 @@
+Name: Jessica Barnitz
+Title: Healthcare Portal 
+Project Description: A healthcare portal for a medical office that schedules upcoming and previous patient appointments and securely maintains the patient’s health record.
+Project Summary:  A healthcare portal for a medical office that schedules upcoming and previous patient appointments and securely maintains the patient’s health record. In this system patients can sign up for the portal, request an appointment for a healthcare provider, have full access to their personal information, medical information and billing information, and give consent to share their medical information. The medical office admin can sign up, add patients to the portal, have full access to the medical office schedule, can schedule/reschedule appointments for the healthcare provider, can search for a patient by name or patient number, and have full access to patient personal information and billing information. The healthcare providers can sign up, have full access to the medical office schedule, can schedule/reschedule appointments for the healthcare provider, can search for a patient by name or patient number, have full access to patient personal information and medical information and when healthcare providers refer patients to outside healthcare providers, they can share the patient’s medical information for continuum of care, with patient consent. 
+
+Presentation: 
+http://www.screencast.com/t/pWfpELoNagsG
+
+
