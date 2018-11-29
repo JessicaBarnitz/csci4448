@@ -11,7 +11,7 @@ import spring.model.Observer;
  * @version 1.0
  * 
  */
-public class Patient extends User implements Observer{
+public class Patient extends User{
 	/**
      * A string describing the type of user
      */
@@ -41,8 +41,7 @@ public class Patient extends User implements Observer{
      */
     public Patient() {
     	this.user = "patient";
-    	this.patientID = MedicalOffice.getCurrentPatientID();
-    	MedicalOffice.getNextPatientID();
+    	this.patientID = MedicalOffice.getNextPatientID()-1;
     	this.appointments = new ArrayList<Appointment>();
     }
     /**
@@ -184,9 +183,4 @@ public class Patient extends User implements Observer{
     	   return null;
        }
    }
-	@Override
-	public void update(String _update) {
-		// TODO Auto-generated method stub
-		
-	}
 }

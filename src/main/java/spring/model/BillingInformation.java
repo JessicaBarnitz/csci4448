@@ -4,6 +4,10 @@ package spring.model;
 import java.util.*;
 
 /**
+ * Billing informations class for object composition 
+ * 
+ * @author Jessica Barnitz
+ * @version 1.0
  * 
  */
 public class BillingInformation {
@@ -68,19 +72,21 @@ public class BillingInformation {
     }
 
     /**
-     * @return
+     * getter
+     * @return this.insurance
      */
     public boolean getInsurance() {
         return this.insurance;
     }
     /**
+     * setter
      * @param _insurance
-     * @return
      */
     public void setInsurance(boolean _insurance) {
         this.insurance = _insurance;
     }
     /**
+     * getter
      * @return this.insurancePlan
      */
     public String getInsurancePlan() {
@@ -88,14 +94,15 @@ public class BillingInformation {
     }
 
     /**
+     * setter
      * @param _insurancePlan
-     * @return
      */
     public void setInsurancePlan(String _insurancePlan) {
         this.insurancePlan = _insurancePlan;
     }
 
     /**
+     * getter
      * @return this.insurancePlanNumber
      */
     public String getInsurancePlanNumber() {
@@ -103,54 +110,58 @@ public class BillingInformation {
     }
 
     /**
+     * setter
      * @param _insurancePlanNumber
-     * @return
      */
     public void setInsurancePlanNumber(String _insurancePlanNumber) {
         this.insurancePlanNumber = _insurancePlanNumber;
     }
 
     /**
+     * getter
      * @return this.effectiveDate
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
     /**
+     * setter
      * @param _effectiveDate
-     * @return
      */
     public void setEffectiveDate(Date _effectiveDate) {
         this.effectiveDate = _effectiveDate;
     }
     /**
+     * getter
      * @return this.copay
      */
     public String getCopay() {
         return this.copay;
     }
     /**
+     * setter
      * @param _copay
-     * @return
      */
     public void setCopay(String _copay) {
         this.copay = _copay;
     }
     /**
+     * getter
      * @return this.billingAddress
      */
     public Address getBillingAddress() {
         return this.billingAddress;
     }
     /**
+     * setter
      * @param _billingAddress
-     * @return
      */
     public void setBillingAddress(Address _billingAddress) {
         this.billingAddress = _billingAddress;
     }
 
     /**
+     * show the billing address as a string
      * @param patientNum
      * @return
      */

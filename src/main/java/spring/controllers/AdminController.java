@@ -32,12 +32,11 @@ import org.springframework.validation.BindingResult;
 
 
 @Controller
-@SessionAttributes("admin")
 @RequestMapping(value="/")
 public class AdminController {
 	
 	@GetMapping("/newAdmin")
-	public String admin(ModelMap model, HttpSession session)
+	public String admin(ModelMap model)
 	{
 		Admin admin = new Admin();
 		CurrentProvider.provider = null;
@@ -47,11 +46,12 @@ public class AdminController {
 	}
 	
 	@PostMapping("/admin")
-	public String viewPatient(@ModelAttribute("admin") Admin admin, ModelMap model, HttpSession session) {
+	public String viewPatient(@ModelAttribute("admin") Admin admin, ModelMap model) {
 		System.out.println(admin);
 		//observer design pattern - notify observers of change
 		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());		
 		medicalOffice.addObserver(admin);
+		
 		CurrentAdmin.admin = admin;
 		CurrentUser.userPage = "Admin";
 		
@@ -89,33 +89,4 @@ public class AdminController {
 		
 		return CurrentUser.userPage;
 	}
-	
-//	@GetMapping("/adminSearchPatient")
-//	public String searchPatient(ModelMap model)
-//	{
-//		Patient searchPatient = new Patient();
-//		model.put("searchPatient", searchPatient);
-//		return "searchPatient";
-//	}
-//	
-//	@PostMapping("/adminSearchPatient")
-//	public String viewSearchPatient(@ModelAttribute("patient") Patient patient, BindingResult bindingResult, Map<String, Object> model) {
-//		System.out.println(patient);
-//		
-//		if (MedicalOffice.findPatient(patient.getFirstName(), patient.getLastName()) != null) {
-//			CurrentPatient.patient = MedicalOffice.findPatient(patient.getFirstName(), patient.getLastName());
-//		}
-//		else {
-//			CurrentPatient.patient = MedicalOffice.findPatient(patient.getPatientID());
-//		}
-//		System.out.println("First Name: " + CurrentPatient.patient.getFirstName());
-//		System.out.println("Last Name: " + CurrentPatient.patient.getLastName());
-//		System.out.println("Last Name: " + CurrentPatient.patient.getPatientID());
-//		
-//		model.put("patient", CurrentPatient.patient);
-//		model.put("admin", CurrentAdmin.admin);
-//		
-//		return "Admin";
-//	}
-	
 }

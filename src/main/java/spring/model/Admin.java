@@ -99,7 +99,13 @@ public class Admin extends User implements Observer {
     	   return null;
        }
    }
-   
+   /**
+    * abstract function from observable interface 
+    * it sets the admin state variable to blast the message to 
+    * all admin 
+    * 
+    * @param _update string of the observer invoker patient information
+    */
 	@Override
 	public void update(String _update) {
 		System.out.println(_update);

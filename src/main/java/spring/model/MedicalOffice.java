@@ -59,9 +59,12 @@ public class MedicalOffice extends Observable{
      * state that changed
      */
     private String state;
-
+    /**
+     * getter
+     * @return this.state
+     */
     public String getState() {
-        return state;
+        return this.state;
      }
 
      public void setState(String _state) {
@@ -136,59 +139,101 @@ public class MedicalOffice extends Observable{
     	}
     	return medicalOfficeInstance;
     }
-    
+    /**
+     * getter
+     * @return this.name
+     */
     public String getName() {
         return this.name;
     }
-
+    /**
+     * setter
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
-
+    /**
+     * getter
+     * @return this.address
+     */
     public Address getAddress() {
         return this.address;
     }
-
+    /**
+     * setter
+     * @param _address object
+     */
     public void setAddress(Address _address) {
         this.address = _address;
     }
-
+    /**
+     * getter
+     * @return this.phone
+     */
     public String getPhone() {
         return this.phone;
     }
-
+    /**
+     * setter
+     * @param _phone
+     */
     public void setPhone(String _phone) {
         this.phone = _phone;
     }
-
+    /**
+     * getter
+     * @return this.website
+     */
     public String getWebsite() {
         return this.website;
     }
-
+    /**
+     * setter
+     * @param _website
+     */
     public void setWebsite(String _website) {
         this.website = _website;
     }
-
+    /**
+     * getter
+     * @return _healthcareProviderList
+     */
     public static List<HealthcareProvider> getHealthcareProviderList() {
         return healthcareProviderList;
     }
-
+    /**
+     * setter
+     * @param _healthcareProviderList
+     */
     public void setHealthcareProviderList(List<HealthcareProvider> _healthcareProviderList) {
         healthcareProviderList = _healthcareProviderList;
     }
-
+    /**
+     * getter
+     * @return _adminList
+     */
     public static List<Admin> getAdminList() {
         return adminList;
     }
-
+    /**
+     * setter
+     * @param _adminList
+     */
     public void setAdminList(List<Admin> _adminList) {
         adminList = _adminList;
     }
-
+    /**
+     * getter
+     * @return _patientList
+     */
     public static List<Patient> getPatientList() {
         return patientList;
     }
-
+    /**
+     * setter
+     * @param _patientList
+     */
     public void setPatientList(List<Patient> _patientList) {
         patientList = _patientList;
     }
@@ -247,22 +292,9 @@ public class MedicalOffice extends Observable{
    public String showAddress() {
 	   return address.showAddress();
   }
-//   /**
-//    * formats the list of healthcare providers by first and last name and specialty as a comma separated string
-//    * @return hcp
-//    */
-//   public String showHealthcareProviders() {
-//	   ListIterator<HealthcareProvider> iterator = healthcareProviderList.listIterator();
-//	   String hcp = "";
-//	   while(iterator.hasNext()) {
-//		   HealthcareProvider i = iterator.next();
-//		   hcp += "Dr. " + i.getFirstName() + " " + i.getLastName() + ", " +  i.getSpecialty() + "\n";
-//	   }
-//	   return hcp;
-//   }
    /**
     * formats the list of healthcare providers by first and last name and specialty as a comma separated string
-    * @return hcp
+    * @return hcp_string
     */
    public static String showHealthcareProviders() {
 	   ListIterator<HealthcareProvider> iterator = healthcareProviderList.listIterator();
@@ -273,6 +305,10 @@ public class MedicalOffice extends Observable{
 	   }
 	   return hcp;
    }
+   /**
+	 * formats the list of admin by first and last name and job title as a comma separated string
+	 * @return admin_string 
+	 */
    public static String showAdmin() {
 	   ListIterator<Admin> iterator = adminList.listIterator();
 	   String a = "";
@@ -282,6 +318,10 @@ public class MedicalOffice extends Observable{
 	   }
 	   return a;
    }
+   /**
+	 * formats the list of patients by first and last name and id as a comma separated string
+	 * @return patient_string  
+	 */
    public static String showPatients() {
 	   ListIterator<Patient> iterator = patientList.listIterator();
 	   String p = "";

@@ -67,7 +67,6 @@ public class MedicalInformation {
     	this.consent = false;
     }
 
-
     /**
      * @param _allergies 
      * @param _immunizations 
@@ -90,65 +89,101 @@ public class MedicalInformation {
     	this.familyMedicalHistory = _familyMedicalHistory;
     	this.consent = _consent;
     }
-
+    /**
+     * getter
+     * @return _allergies
+     */
     public List<String> getAllergies() {
         return this.allergies;
     }
     /**
+     * setter
      * @param _allergies
-     * @return none
      */
     public void setAllergies(List<String> _allergies) {
         this.allergies = _allergies;
     }
     /**
-     * @param none
+     * getter
      * @return immunizations
      */
     public List<String> getImmunizations() {
         return this.immunizations;
     }
-
+    /**
+     * setter
+     * @param immunizations
+     */
     public void setImmunizations(List<String> immunizations) {
         this.immunizations = immunizations;
     }
-
+    /**
+     * getter
+     * @return currentMedications
+     */
     public List<String> getCurrentMedications() {
         return currentMedications;
     }
-
+    /**
+     * setter
+     * @param currentMedications
+     */
     public void setCurrentMedications(List<String> currentMedications) {
         this.currentMedications = currentMedications;
     }
-
+    /**
+     * getter
+     * @return mentalStatusExam
+     */
     public String getMentalStatusExam() {
         return mentalStatusExam;
     }
-
+    /**
+     * setter
+     * @param mentalStatusExam
+     */
     public void setMentalStatusExam(String mentalStatusExam) {
         this.mentalStatusExam = mentalStatusExam;
     }
-
+    /**
+     * getter
+     * @return functionalStatusExam
+     */
     public String getFunctionalStatusExam() {
         return functionalStatusExam;
     }
-
+    /**
+     * setter
+     * @param functionalStatusExam
+     */
     public void setFunctionalStatusExam(String functionalStatusExam) {
         this.functionalStatusExam = functionalStatusExam;
     }
-
+    /**
+     * getter
+     * @return personalMedicalHistory list
+     */
     public List<String> getPersonalMedicalHistory() {
         return personalMedicalHistory;
     }
-
+    /**
+     * setter
+     * @param personalMedicalHistory list
+     */
     public void setPersonalMedicalHistory(List<String> personalMedicalHistory) {
         this.personalMedicalHistory = personalMedicalHistory;
     }
-
+    /**
+     * getter
+     * @return familyMedicalHistory list
+     */
     public List<String> getFamilyMedicalHistory() {
         return familyMedicalHistory;
     }
-
+    /**
+     * setter
+     * @param familyMedicalHistory list
+     */
     public void setFamilyMedicalHistory(List<String> familyMedicalHistory) {
         this.familyMedicalHistory = familyMedicalHistory;
     }
@@ -160,15 +195,22 @@ public class MedicalInformation {
 //    public void setHealthcareProviders(List<HealthcareProvider> healthcareProviders) {
 //        this.healthcareProviders = healthcareProviders;
 //    }
-
+    /**
+     * getter
+     * @return consent
+     */
     public boolean getConsent() {
         return consent;
     }
-
+    /**
+     * setter
+     * @param consent
+     */
     public void setConsent(boolean consent) {
         this.consent = consent;
     }
     /**
+     * show patient medical information for given patientID
      * @param patientNum
      * @return
      */

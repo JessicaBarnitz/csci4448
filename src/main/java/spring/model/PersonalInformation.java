@@ -4,6 +4,10 @@ package spring.model;
 import java.util.*;
 
 /**
+ * Personal information class to make use of object composition
+ * 
+ * @author Jessica Barnitz
+ * @version 1.0
  * 
  */
 public class PersonalInformation {
@@ -53,81 +57,77 @@ public class PersonalInformation {
         this.emergencyContactPhone = _emergencyContactPhone;
     }
     /**
+     * getter
     * @return this.phone
     */
     public String getPhone() {
         return this.phone;
     }
     /**
-    * @param _phone
+     * setter
+    * @param _phone user phone number
     *
     */
     public void setPhone(String _phone) {
         this.phone = _phone;
     }
    /**
-    * @return
+    * getter
+    * @return this.email
     */
     public String getEmail() {
         return this.email;
     }
    /**
-    * @param _email
-    * @return
+    * setter
+    * @param _email user email
     */
     public void setEmail(String _email) {
         this.email = _email;
     }
    /**
-    * @return
+    * getter
+    * @return this.homeAddress
     */
     public Address getHomeAddress() {
         return this.homeAddress;
     }
    /**
-    * @param _homeAddress
-    * @return
+    * setter
+    * @param _homeAddress home address object
     */
     public void setHomeAddress(Address _homeAddress) {
         this.homeAddress = _homeAddress;
     }
    /**
-    * @return
+    * @return this.emergencyContactName
     */
     public String getEmergencyContactName() {
         return this.emergencyContactName;
     }
    /**
-    * @param _emergencyContactName
-    * @return
+    * setter
+    * @param _emergencyContactName 
     */
     public void setEmergencyContactName(String _emergencyContactName) {
         this.emergencyContactName = _emergencyContactName;
     }
    /**
-    * @return
+    * getter
+    * @return this.emergencyContactPhone
     */
     public String getEmergencyContactPhone() {
         return this.emergencyContactPhone;
     }
    /**
+    * getter
     * @param _emergencyContactPhone
-    * @return
     */
     public void setEmergencyContactPhone(String _emergencyContactPhone) {
         this.emergencyContactPhone = _emergencyContactPhone;
     }
    /**
-    * @param street
-    * @param zipcode
-    * @param county
-    * @param state
-    */
-   public void setHomeAddress(String street, int zipcode, String county, String state) {
-       // TODO implement here
-   }
-
-   /**
+    * show patient personal information for the given patient id
     * @param patientNum
     * @return
     */

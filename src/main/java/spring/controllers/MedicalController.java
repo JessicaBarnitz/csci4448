@@ -30,7 +30,6 @@ public class MedicalController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewMedicalInformation(Map<String, Object> model) {
-//		change this to patient specific //https://www.codejava.net/frameworks/spring/spring-mvc-form-handling-tutorial-and-example
 		MedicalInformation medicalInformationForm = new MedicalInformation();
 		
 		model.put("medicalInformationForm", medicalInformationForm);
@@ -40,11 +39,13 @@ public class MedicalController {
 		
 		return "MedicalInformation";
 	}
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public String processMedicalInformation(@ModelAttribute("medicalInformationForm") MedicalInformation medicalInformation, Map<String, Object> model) {
 		//implement logic
 		Patient patient = CurrentPatient.patient;
 		CurrentPatient.patient.setMedicalInformation(medicalInformation);
+		
 		model.put("patient", CurrentPatient.patient);
 		model.put("admin", CurrentAdmin.admin);
 		model.put("provider", CurrentProvider.provider);

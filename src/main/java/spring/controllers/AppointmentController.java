@@ -20,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -38,8 +39,8 @@ public class AppointmentController {
 		model.put("patient", CurrentPatient.patient);
 		model.put("admin", CurrentAdmin.admin);
 		model.put("Provider", CurrentProvider.provider);
-		System.out.println("provider in schedule get:" + CurrentProvider.provider);
 		
+		System.out.println("provider in schedule get:" + CurrentProvider.provider);
 		System.out.println("in controller:" + CurrentPatient.patient);
 		
 		return "ScheduleAppointment";
@@ -116,6 +117,6 @@ public class AppointmentController {
 		CurrentPatient.patient.cancelAppointment(appointment.getDate(), appointment.getTime());
 		model.put("patient", CurrentPatient.patient);
 		
-		return "Patient";
+		return CurrentUser.userPage;
 	}
 }

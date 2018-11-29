@@ -1,9 +1,11 @@
 package spring.model;
 
 
-//import java.util.*;
-
 /**
+ * Address class to make use of object composition
+ * 
+ * @author Jessica Barnitz
+ * @version 1.0
  * 
  */
 public class Address {

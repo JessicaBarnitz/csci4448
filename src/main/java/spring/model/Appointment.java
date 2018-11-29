@@ -4,6 +4,10 @@ package spring.model;
 import java.util.*;
 
 /**
+ * Appointment class for appointment central unit
+ * 
+ * @author Jessica Barnitz
+ * @version 1.0
  * 
  */
 public class Appointment {

@@ -2,7 +2,6 @@ package spring.controllers;
 
 import spring.model.Address;
 import spring.model.Admin;
-import spring.model.Appointment;
 import spring.model.CurrentPatient;
 import spring.model.CurrentUser;
 import spring.model.HealthcareProvider;
@@ -17,11 +16,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 
 
 @Controller
@@ -46,14 +42,15 @@ public class PatientController {
 		CurrentPatient.patient = patient;
 		CurrentUser.userPage = "Patient";
 		
+		//observer design pattern - notify observers of change
+		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());
+		medicalOffice.setState("********Observer Update********\nNew patient added to the Healthcare Portal: " + patient.getFirstName() + " " + patient.getLastName() + ", id: " + patient.getPatientID());
+				
 		System.out.println("First Name: " + patient.getFirstName());
 		System.out.println("Last Name: " + patient.getLastName());
 		System.out.println("Date of Birth: " + patient.getDateOfBirth());
 		System.out.println("patient ID: " + patient.getPatientID());
 		
-		//observer design pattern - notify observers of change
-		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());
-		medicalOffice.setState("********Observer Update********\nNew patient added to the Healthcare Portal: " + patient.getFirstName() + " " + patient.getLastName() + ", id: " + patient.getPatientID());
 		return "Patient";
 	}
 	
@@ -61,17 +58,18 @@ public class PatientController {
 	public String viewPatient(@ModelAttribute("patient") Patient patient) {
 		System.out.println(patient);
 		MedicalOffice.addPatient(patient);
+		
 		CurrentPatient.patient = patient;
 		CurrentUser.userPage = "Patient";
-		
-		System.out.println("First Name: " + patient.getFirstName());
-		System.out.println("Last Name: " + patient.getLastName());
-		System.out.println("Date of Birth: " + patient.getDateOfBirth());
-		System.out.println("patient ID: " + patient.getPatientID());
 		
 		//observer design pattern - notify observers of change
 		MedicalOffice medicalOffice = MedicalOffice.getInstance("Boulder Health", new Address("123 Main Street", "Longmont", "Boulder", "Colorado", "80504"), "303-123-4567", "http://localhost:8080/SpringMVCTutorial/", new ArrayList<HealthcareProvider>(), new ArrayList<Admin>(), new ArrayList<Patient>());
 		medicalOffice.setState("********Observer Update********\nNew patient added to the Healthcare Portal: " + patient.getFirstName() + " " + patient.getLastName() + ", id: " + patient.getPatientID());
+				
+		System.out.println("First Name: " + patient.getFirstName());
+		System.out.println("Last Name: " + patient.getLastName());
+		System.out.println("Date of Birth: " + patient.getDateOfBirth());
+		System.out.println("patient ID: " + patient.getPatientID());
 		
 		return "Patient";
 	}
